@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # How to get Helm Working on Docker EE 2.0
 
 ## 1)
