@@ -39,7 +39,8 @@ helm init --debug --service-account tiller
 Verifiy installation with:
 
 ```
-$ kubectl get pods -n kube-system
+$ kubectl get pods -n kube-system | grep tiller
+tiller-deploy-546cf9696c-68tjs             1/1       Running   0          47m
 
 $ helm version
 Client: &version.Version{SemVer:"v2.7.2", GitCommit:"8478fb4fc723885b155c924d1c8c410b7a9444e6", GitTreeState:"clean"}
