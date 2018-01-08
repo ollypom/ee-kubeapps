@@ -35,7 +35,7 @@ metadata:
   name: nginx
 spec:
   rules:
-  - host: app1.olly.dtcntr.net
+  - host: test.apps.olly.dtcntr.net
     http:
       paths:
       - backend:
