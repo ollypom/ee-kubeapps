@@ -1,0 +1,40 @@
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: prometheus
+apiVersion: v1
+data:
+  prometheus.yml: |-
+    global:
+      scrape_interval: 60s
+      scrape_timeout: 60s
+    scrape_configs:
+    - job_name: 'kubernetes-nodes'
+      tls_config:
+        insecure_skip_verify: true
+      scheme: https
+      kubernetes_sd_configs:
+      - role: node
+    - job_name: 'kubernetes-pods'
+      tls_config:
+        insecure_skip_verify: true
+      scheme: https
+      kubernetes_sd_configs:
+      - role: pod
+#    - job_name: 'kubernetes-service-endpoints'
+#      scheme: http
+#      kubernetes_sd_configs:
+#      - role: endpoints
+#    - job_name: 'kubernetes-services'
+#      scheme: http
+#      metrics_path: /probe
+#      params:
+#        module: [http_2xx]
+#      kubernetes_sd_configs:
+#      - role: service
+#    - job_name: 'kubernetes-pods'
+#      tls_config:
+#        insecure_skip_verify: true
+#      scheme: https
+#      kubernetes_sd_configs:
+#      - role: pod
