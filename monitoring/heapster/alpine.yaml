@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: alpine
+  namespace: heapster
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        task: alpine
+    spec:
+      containers:
+      - name: alpine
+        image: alpine:latest
+        imagePullPolicy: IfNotPresent
+        command:
+        - sleep
+        - "5000"
+        volumeMounts:
+        - name: heapster-certs
+          mountPath: /srv/kubernetes/
+          readOnly: true
+      volumes:
+      - name: heapster-certs
+        hostPath:
+          path: /var/lib/docker/swarm/certificates

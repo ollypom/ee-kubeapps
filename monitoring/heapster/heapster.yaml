@@ -20,13 +20,25 @@ spec:
       serviceAccountName: heapster
       containers:
       - name: heapster
-        image: gcr.io/google_containers/heapster-amd64:v1.5.0
+        image: k8s.gcr.io/heapster-amd64:v1.5.0
         imagePullPolicy: IfNotPresent
         command:
         - /heapster
-        - "--source=kubernetes.summary_api:https://10.96.0.1?useServiceAccount=true&kubeletHttps=true&kubeletPort=10250&insecure=true"
+        - "--source=kubernetes:https://10.96.0.1?inClusterConfig=false&kubeletHttps=true&kubeletPort=10250&auth="
         - "--sink=influxdb:http://monitoring-influxdb.heapster.svc:8086"
+        - "--cert-dir=/srv/kubernetes/"
+          #- "--tls-ca-file=/srv/kubernetes/swarm-root-ca.crt"  
+          #- "--tls-cert-file=/srv/kubernetes/swarm-node.crt"
+          #- "--tls-private-key-file=/srv/kubernetes/swarm-node.key"
         - "--vmodule=*=4"
+        volumeMounts:
+        - name: heapster-certs
+          mountPath: /srv/kubernetes/
+          readOnly: true
+      volumes:
+      - name: heapster-certs
+        hostPath:
+          path: /var/lib/docker/swarm/certificates
 ---
 apiVersion: v1
 kind: Service
