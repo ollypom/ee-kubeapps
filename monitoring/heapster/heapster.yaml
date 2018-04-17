@@ -1,14 +1,8 @@
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: heapster
-  namespace: heapster
----
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: heapster
-  namespace: heapster
+  namespace: kube-system
 spec:
   replicas: 1
   template:
@@ -17,28 +11,23 @@ spec:
         task: monitoring
         k8s-app: heapster
     spec:
-      serviceAccountName: heapster
       containers:
       - name: heapster
-        image: k8s.gcr.io/heapster-amd64:v1.5.0
+        image: k8s.gcr.io/heapster-amd64:v1.5.2
         imagePullPolicy: IfNotPresent
         command:
         - /heapster
-        - "--source=kubernetes:https://10.96.0.1?inClusterConfig=false&kubeletHttps=true&kubeletPort=10250&auth="
-        - "--sink=influxdb:http://monitoring-influxdb.heapster.svc:8086"
-        - "--cert-dir=/srv/kubernetes/"
-          #- "--tls-ca-file=/srv/kubernetes/swarm-root-ca.crt"  
-          #- "--tls-cert-file=/srv/kubernetes/swarm-node.crt"
-          #- "--tls-private-key-file=/srv/kubernetes/swarm-node.key"
+        - "--source=kubernetes.summary_api:https://10.96.0.1?inClusterConfig=false&kubeletHttps=true&kubeletPort=10250&auth=/srv/demo/kube.yml"
+        - "--sink=influxdb:http://monitoring-influxdb.kube-system.svc:8086"
         - "--vmodule=*=4"
         volumeMounts:
-        - name: heapster-certs
-          mountPath: /srv/kubernetes/
+        - name: admin-certs
+          mountPath: /srv/demo/
           readOnly: true
       volumes:
-      - name: heapster-certs
-        hostPath:
-          path: /var/lib/docker/swarm/certificates
+      - name: admin-certs
+        configMap:
+          name: adminconfig
 ---
 apiVersion: v1
 kind: Service
@@ -50,7 +39,7 @@ metadata:
     kubernetes.io/cluster-service: 'true'
     kubernetes.io/name: Heapster
   name: heapster
-  namespace: heapster
+  namespace: kube-system
 spec:
   ports:
   - port: 80
