@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Deploying Heapster on UCP 3.0
 
 Note this is currently broken on UCP 3.0.0 due to the Kubelet cAdvisor unable to get container stats.
