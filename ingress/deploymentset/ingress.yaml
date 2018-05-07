@@ -35,6 +35,7 @@ spec:
             - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
             - --udp-services-configmap=$(POD_NAMESPACE)/udp-services
             - --annotations-prefix=nginx.ingress.kubernetes.io
+            - --v=5
           env:
             - name: POD_NAME
               valueFrom:
