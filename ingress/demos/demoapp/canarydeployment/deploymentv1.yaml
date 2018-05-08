@@ -1,0 +1,36 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  labels:
+    appname: demo
+  name: demo-app
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      appname: demo
+  template:
+    metadata:
+      labels:
+        appname: demo
+        appversion: "0.1"
+    spec:
+      containers:
+      - image: docker.io/ehazlett/docker-demo
+        name: demo-app
+        env: 
+        - name: VERSION
+          value: "0.1"
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /ping
+            port: 8080
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        ports:
+        - name: demo
+          containerPort: 8080

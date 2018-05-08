@@ -1,0 +1,23 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  labels:
+    app: demo
+  name: demo-app
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: demo
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      containers:
+      - image: docker.io/ehazlett/docker-demo
+        name: demo-app
+        env: 
+        - name: VERSION
+          value: "0.1"
