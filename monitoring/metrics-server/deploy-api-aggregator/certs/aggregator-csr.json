@@ -1,0 +1,16 @@
+{
+  "CN": "aggregator",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "UK",
+      "L": "London",
+      "O": "Kubernetes",
+      "OU": "Kubeadm",
+      "ST": "Londonshire"
+    }
+  ]
+}
