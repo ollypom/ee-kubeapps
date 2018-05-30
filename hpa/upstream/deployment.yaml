@@ -1,0 +1,36 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  labels:
+    app: hpaexample
+  name: hpa-example
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hpaexample
+  template:
+    metadata:
+      labels:
+        app: hpaexample
+    spec:
+      containers:
+      - image: 52.56.228.3/admin/hpaexample:1
+        name: hpa-example
+        resources:
+          requests:
+            cpu: "200m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hpa-example
+  namespace: default
+  labels:
+    app: hpaexample
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: hpaexample
