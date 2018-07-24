@@ -1,17 +1,20 @@
-apiVersion: extensions/v1beta1
-kind: Deployment
+apiVersion: apps/v1beta2
+kind: DaemonSet
 metadata:
   name: default-http-backend
-  labels:
-    app: default-http-backend
   namespace: ingress-nginx
 spec:
-  replicas: 1
+  selector:
+    matchLabels:
+      app: default-http-backend
   template:
     metadata:
       labels:
         app: default-http-backend
     spec:
+      serviceAccountName: nginx-service-account
+      nodeSelector:
+        opnoderole: loadbalancer
       terminationGracePeriodSeconds: 60
       containers:
       - name: default-http-backend

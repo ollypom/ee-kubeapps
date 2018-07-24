@@ -8,9 +8,13 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: nginx-ingress-controller
+  labels:
+    app: ingress-nginx
   namespace: ingress-nginx
+  annotations:
+   seccomp.security.alpha.kubernetes.io/pod: docker/default
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: ingress-nginx
@@ -27,7 +31,7 @@ spec:
         opnoderole: loadbalancer
       containers:
         - name: nginx-ingress-controller
-          image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.9.0
+          image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.17.1
           args:
             - /nginx-ingress-controller
             - --default-backend-service=$(POD_NAMESPACE)/default-http-backend

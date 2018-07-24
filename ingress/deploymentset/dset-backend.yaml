@@ -5,13 +5,17 @@ metadata:
   labels:
     app: default-http-backend
   namespace: ingress-nginx
+  annotations:
+   seccomp.security.alpha.kubernetes.io/pod: docker/default
 spec:
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
         app: default-http-backend
     spec:
+      nodeSelector:
+        opnoderole: loadbalancer
       terminationGracePeriodSeconds: 60
       containers:
       - name: default-http-backend

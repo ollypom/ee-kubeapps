@@ -1,11 +1,4 @@
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: nginx-service-account
-  namespace: ingress-nginx
----
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1beta2
 kind: DaemonSet
 metadata:
   name: nginx-ingress-controller
@@ -22,14 +15,13 @@ spec:
         prometheus.io/port: '10254'
         prometheus.io/scrape: 'true'
     spec:
-      #serviceAccountName: nginx-service-account
-      serviceAccountName: nginx-ingress-serviceaccount
+      serviceAccountName: nginx-service-account
       hostNetwork: true
       nodeSelector:
         opnoderole: loadbalancer
       containers:
         - name: nginx-ingress-controller
-          image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.15.0
+          image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.17.1
           args:
             - /nginx-ingress-controller
             - --default-backend-service=$(POD_NAMESPACE)/default-http-backend
