@@ -1,5 +1,10 @@
 # Demo Script for Kube Deployments
 
+Note if you don't have DNS set up, you put an app fqdn in to a http header like this
+
+```
+$ curl --resolve demo.test.com:80:51.140.223.104 http://demo.test.com/ping
+```
 
 #### 1) Stand up "Simple Deployment"
 
