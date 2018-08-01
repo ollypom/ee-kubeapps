@@ -1,8 +1,8 @@
+apiVersion: v1
 kind: ConfigMap
 metadata:
   name: prometheus-config
-  namespace: prometheus
-apiVersion: v1
+  namespace: monitoring
 data:
   prometheus.yml: |-
     global:
@@ -11,30 +11,36 @@ data:
     scrape_configs:
     - job_name: 'kubernetes-nodes'
       tls_config:
-        insecure_skip_verify: true
+        ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+      bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
       scheme: https
       kubernetes_sd_configs:
       - role: node
-    - job_name: 'kubernetes-pods'
-      tls_config:
-        insecure_skip_verify: true
-      scheme: https
-      kubernetes_sd_configs:
-      - role: pod
-#    - job_name: 'kubernetes-service-endpoints'
-#      scheme: http
-#      kubernetes_sd_configs:
-#      - role: endpoints
-#    - job_name: 'kubernetes-services'
-#      scheme: http
-#      metrics_path: /probe
-#      params:
-#        module: [http_2xx]
-#      kubernetes_sd_configs:
-#      - role: service
-#    - job_name: 'kubernetes-pods'
-#      tls_config:
-#        insecure_skip_verify: true
-#      scheme: https
-#      kubernetes_sd_configs:
-#      - role: pod
+## Pods require Heapster to be running as it hits the /metrics api
+##    - job_name: 'kubernetes-pods'
+##      tls_config:
+##        ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+##      bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+##      scheme: https
+##      kubernetes_sd_configs:
+##      - role: pod
+##    - job_name: 'kubernetes-service-endpoints'
+##      tls_config:
+##        ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+##      bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+##      scheme: https
+##      kubernetes_sd_configs:
+##      - role: endpoints
+##    - job_name: 'kubernetes-services'
+##      scheme: http
+##      metrics_path: /probe
+##      params:
+##        module: [http_2xx]
+##      kubernetes_sd_configs:
+##      - role: service
+##    - job_name: 'kubernetes-pods'
+##      tls_config:
+##        insecure_skip_verify: true
+##      scheme: https
+##      kubernetes_sd_configs:
+##      - role: pod
