@@ -40,6 +40,8 @@ kind: DaemonSet
 metadata:
   name: system-reservation
   namespace: default
+  annotations:
+   seccomp.security.alpha.kubernetes.io/pod: docker/default
 spec:
   selector:
     matchLabels:
@@ -62,8 +64,11 @@ spec:
 Also remember you can also set default memory limits for a given namespace using
 the limit range controller. This will make sure that even if you don't set a 
 resource limitations on your deployments, kubernetes will put some default on
-there for you. 
+there for you. You can even set the size of the largest reservation if you
+wanted to too. 
+ 
 https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/ 
+https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-constraint-namespace/
 
 ```
 apiVersion: v1

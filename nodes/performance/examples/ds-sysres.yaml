@@ -3,6 +3,8 @@ kind: DaemonSet
 metadata:
   name: system-reservation
   namespace: default
+  annotations:
+   seccomp.security.alpha.kubernetes.io/pod: docker/default
 spec:
   selector:
     matchLabels:
