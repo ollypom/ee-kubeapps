@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stress-ng-2
+spec:
+  containers:
+  - name: stress
+    image: lorel/docker-stress-ng
+    command: ["/usr/bin/stress-ng"]
+    args: ["--vm", "1", "--vm-bytes", "536870912", "--timeout", "0"]

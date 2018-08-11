@@ -1,0 +1,22 @@
+apiVersion: apps/v1beta2
+kind: DaemonSet
+metadata:
+  name: system-reservation
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: system-reservation
+  template:
+    metadata:
+      labels:
+        app: system-reservation
+    spec:
+      containers:
+        - name: system-res
+          image: nginx
+          resources:
+            requests:
+              memory: "2Gi"
+            limits:
+              memory: "2Gi"
