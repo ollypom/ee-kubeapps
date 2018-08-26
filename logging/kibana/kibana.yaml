@@ -22,8 +22,6 @@ spec:
         env:
         - name: CLUSTER_NAME
           value: elasticsearch-cluster
-#        - name: SERVER_BASEPATH
-#          value: /kibana
         resources:
           limits:
             cpu: 1000m

@@ -19,7 +19,9 @@ metadata:
   name: kibana
   namespace: monitoring
   annotations:
-      #    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: basic-auth
+    nginx.ingress.kubernetes.io/auth-realm: "Authentication Required - Sorry"
 spec:
   rules:
   - host: kibana.apps.olly.dtcntr.net

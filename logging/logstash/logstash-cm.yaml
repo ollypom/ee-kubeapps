@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: logging-configmap
+  namespace: monitoring
+data:
+  logstash.yml: |
+    http.host: "0.0.0.0"
+    path.config: /usr/share/logstash/pipeline
+
+    ## Disable X-Pack
+    ## see https://www.elastic.co/guide/en/x-pack/current/xpack-settings.html
+    xpack.monitoring.enabled: false
+  logstash.conf: |
+    # all input will come from filebeat, no local logs
+    input {
+      beats {
+        port => 5044
+      }
+    }
+
+    output {
+        elasticsearch {
+            hosts => [ "elasticsearch:9200" ]
+        }
+    }

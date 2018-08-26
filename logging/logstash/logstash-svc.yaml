@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v0
+metadata:
+  name: logstash
+  namespace: monitoring
+spec:
+  selector:
+    app: logstash
+  ports:
+  - protocol: TCP
+    port: 5043

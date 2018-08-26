@@ -1,0 +1,59 @@
+apiVersion: apps/v1beta2
+kind: DaemonSet
+metadata:
+  name: journalbeat
+  namespace: monitoring
+  labels:
+    app: journalbeat
+spec:
+  selector:
+    matchLabels:
+      app: journalbeat
+  template:
+    metadata:
+      labels:
+        app: journalbeat
+      annotations:
+       seccomp.security.alpha.kubernetes.io/pod: docker/default
+    spec:
+      terminationGracePeriodSeconds: 30
+      securityContext:
+        runAsUser: 0
+      containers:
+      - name: journalbeat
+        image: docker.io/mheese/journalbeat:latest
+        resources:
+          requests:
+            cpu: 50m
+            memory: 50Mi
+          limits:
+            cpu: 50m
+            memory: 100Mi
+        env:
+          - name: LOGSTASH_HOST
+            value: logstash:5044
+        volumeMounts:
+        - name: vartmp
+          mountPath: /data
+        - name: varlog
+          mountPath: /var/log/journal
+          readOnly: true
+        - name: runlog
+          mountPath: /run/log/journal
+          readOnly: true
+        - name: machineid
+          mountPath: /etc/machine-id
+          readOnly: true
+      volumes:
+      - name: varlog
+        hostPath:
+          path: /var/log
+      - name: vartmp
+        hostPath:
+          path: /var/tmp/journalbeat
+      - name: runlog
+        hostPath:
+          path: /run/log/journal
+      - name: machineid
+        hostPath:
+          path: /etc/machine-id
