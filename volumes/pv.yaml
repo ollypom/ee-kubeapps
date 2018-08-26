@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv3
+  name: nfs-pv1
 spec:
   capacity:
     storage: 5Gi
@@ -13,5 +13,41 @@ spec:
     - hard
     - nfsvers=4.1
   nfs:
-    path: /home/ubuntu/export/tmp
-    server: 172.31.16.33
+    path: /pv1
+    server: 172.31.31.115
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv2
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: slow
+  mountOptions:
+    - hard
+    - nfsvers=4.1
+  nfs:
+    path: /pv2
+    server: 172.31.31.115
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-pv3
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: slow
+  mountOptions:
+    - hard
+    - nfsvers=4.1
+  nfs:
+    path: /pv3
+    server: 172.31.31.115
