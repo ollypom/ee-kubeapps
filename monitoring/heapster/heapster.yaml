@@ -1,24 +1,30 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: heapster
   namespace: kube-system
+  labels:
+    app: heapster
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: heapster
   template:
     metadata:
       labels:
-        task: monitoring
-        k8s-app: heapster
+        app: heapster
+      annotations:
+       seccomp.security.alpha.kubernetes.io/pod: docker/default
     spec:
       containers:
       - name: heapster
-        image: k8s.gcr.io/heapster-amd64:v1.5.2
+        image: k8s.gcr.io/heapster-amd64:v1.5.4
         imagePullPolicy: IfNotPresent
         command:
         - /heapster
         - "--source=kubernetes.summary_api:https://10.96.0.1?inClusterConfig=false&kubeletHttps=true&kubeletPort=10250&auth=/srv/demo/kube.yml"
-        - "--sink=influxdb:http://monitoring-influxdb.kube-system.svc:8086"
+        - "--sink=influxdb:http://heapster-influxdb.kube-system.svc:8086"
         - "--vmodule=*=4"
         volumeMounts:
         - name: admin-certs
@@ -32,17 +38,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    task: monitoring
-    # For use as a Cluster add-on (https://github.com/kubernetes/kubernetes/tree/master/cluster/addons)
-    # If you are NOT using this as an addon, you should comment out this line.
-    kubernetes.io/cluster-service: 'true'
-    kubernetes.io/name: Heapster
   name: heapster
   namespace: kube-system
+  labels:
+    app: heapster
 spec:
   ports:
   - port: 80
     targetPort: 8082
   selector:
-    k8s-app: heapster
+    app: heapster

@@ -1,83 +1,69 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: heapster-grafana
   namespace: kube-system
+  labels:
+    app: heapster-grafana
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: heapster-grafana
   template:
     metadata:
       labels:
-        task: monitoring
-        k8s-app: grafana
+        app: heapster-grafana
+      annotations:
+       seccomp.security.alpha.kubernetes.io/pod: docker/default
     spec:
       containers:
       - name: grafana
-        image: k8s.gcr.io/heapster-grafana-amd64:v4.4.3
+        image: k8s.gcr.io/heapster-grafana-amd64:v4.4.1
         ports:
         - containerPort: 3000
           protocol: TCP
         volumeMounts:
-        - mountPath: /etc/ssl/certs
-          name: ca-certificates
-          readOnly: true
         - mountPath: /var
           name: grafana-storage
         env:
-        - name: INFLUXDB_HOST
-          value: monitoring-influxdb
+        - name: INFLUXDB_SERVICE_URL
+          value: http://heapster-influxdb:8086
         - name: GF_SERVER_HTTP_PORT
           value: "3000"
-          # The following env variables are required to make Grafana accessible via
-          # the kubernetes api-server proxy. On production clusters, we recommend
-          # removing these env variables, setup auth for grafana, and expose the grafana
-          # service using a LoadBalancer or a public IP.
-        - name: GF_AUTH_BASIC_ENABLED
-          value: "false"
-        - name: GF_AUTH_ANONYMOUS_ENABLED
-          value: "true"
-        - name: GF_AUTH_ANONYMOUS_ORG_ROLE
-          value: Admin
         - name: GF_SERVER_ROOT_URL
-          # If you're only using the API Server proxy, set this value instead:
-          # value: /api/v1/namespaces/kube-system/services/monitoring-grafana/proxy
           value: /
+        - name: GF_AUTH_ANONYMOUS_ENABLED
+          value: "false"
       volumes:
-      - name: ca-certificates
-        hostPath:
-          path: /etc/ssl/certs
       - name: grafana-storage
         emptyDir: {}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    # For use as a Cluster add-on (https://github.com/kubernetes/kubernetes/tree/master/cluster/addons)
-    # If you are NOT using this as an addon, you should comment out this line.
-    kubernetes.io/cluster-service: 'true'
-    kubernetes.io/name: heapster-grafana
   name: heapster-grafana
   namespace: kube-system
+  labels:
+    app: heapster-grafana
 spec:
   ports:
   - port: 80
     targetPort: 3000
-  type: NodePort
   selector:
-    k8s-app: grafana
+    app: heapster-grafana
 ---
-## Create the ingress resource
-#apiVersion: extensions/v1beta1
-#kind: Ingress
-#metadata:
-#  name: heapster
-#  namespace: heapster
-#spec:
-#  rules:
-#  - host: heapster.apps.olly.dtcntr.net
-#    http:
-#      paths:
-#      - backend:
-#          serviceName: heapster-grafana
-#          servicePort: 80
+# Create the ingress resource
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: heapster
+  namespace: kube-system
+spec:
+  rules:
+  - host: heapster.apps.olly.dtcntr.net
+    http:
+      paths:
+      - backend:
+          serviceName: heapster-grafana
+          servicePort: 80
