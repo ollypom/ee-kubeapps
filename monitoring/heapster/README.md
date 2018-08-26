@@ -29,7 +29,7 @@ $ export KUBECONFIG=$PWD/kube.yml
 $ kubectl -n kube-system create configmap adminconfig --from-file=kube.yml
 ```
 
-Now you are a position to great your 3 artefacts. Including an ignress object
+Now you are a position to create your 3 artefacts. Including an ignress object
 which you probably want to customise :)
 
 
