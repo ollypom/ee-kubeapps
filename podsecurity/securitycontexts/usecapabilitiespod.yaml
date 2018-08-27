@@ -1,0 +1,17 @@
+# The idea of this pod is to use Strace to follow host processes, for fun
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hostpids
+spec:
+  hostPID: true
+  containers:
+  - name: nginx
+    image: nicolaka/netshoot
+    command:
+      - sleep
+      - "500000"
+    securityContext:
+      capabilities:
+        add:
+        - SYS_PTRACE
