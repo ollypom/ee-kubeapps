@@ -16,7 +16,7 @@ spec:
         app: hpaexample
     spec:
       containers:
-      - image: 52.56.228.3/admin/hpaexample:1
+      - image: k8s.gcr.io/hpa-example
         name: hpa-example
         resources:
           requests:

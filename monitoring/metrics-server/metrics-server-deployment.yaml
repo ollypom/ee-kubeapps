@@ -23,10 +23,16 @@ spec:
         k8s-app: metrics-server
     spec:
       serviceAccountName: metrics-server
+      volumes:
+      - name: tmp-dir
+        emptyDir: {}
       containers:
       - name: metrics-server
         image: gcr.io/google_containers/metrics-server-amd64:v0.2.1
         imagePullPolicy: Always
         command:
         - /metrics-server
-        - --source=kubernetes.summary_api:''
+        - "--source=kubernetes.summary_api:https://10.96.0.1?kubeletHttps=true&kubeletPort=10250"
+        volumeMounts:
+        - name: tmp-dir
+          mountPath: /tmp
