@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: basic-pod
+spec:
+  containers:
+    - name:  basic-pod
+      image: alpine:latest
+      command:
+        - sleep
+        - "500000"
+      volumeMounts:
+        - name: machineid
+          mountPath: /etc/machine-id
+          readOnly: true
+  volumes:
+   - name: machineid
+     hostPath:
+       path: /etc/machine-id
