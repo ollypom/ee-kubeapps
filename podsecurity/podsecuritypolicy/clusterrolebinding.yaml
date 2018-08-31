@@ -7,6 +7,6 @@ roleRef:
   name: psp-role
   apiGroup: rbac.authorization.k8s.io
 subjects:
-- kind: ServiceAccount
-  name: psp-serviceaccount
-  namespace: psp-example
+- kind: User
+  name: fred
+  namespace: default
