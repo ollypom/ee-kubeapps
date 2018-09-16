@@ -23,18 +23,6 @@ spec:
         k8s-app: metrics-server
     spec:
       serviceAccountName: metrics-server
-      # Because DNS doesn't work in my env I manually define hosts here. 
-      # you probably don't need this bit....
-      hostAliases:
-      - ip: "172.31.13.181"
-        hostnames:
-        - "manager-01.local"
-      - ip: "172.31.1.128"
-        hostnames:
-        - "worker-01.local"
-      - ip: "172.31.8.8"
-        hostnames:
-        - "dtr-01.local"
       volumes:
       - name: tmp-dir
         emptyDir: {}
@@ -44,7 +32,7 @@ spec:
         imagePullPolicy: Always
         command:
         - /metrics-server
-        - "--kubelet-port=10250"
+        - "--source=kubernetes.summary_api:https://10.96.0.1?kubeletHttps=true&kubeletPort=10250"
         volumeMounts:
         - name: tmp-dir
           mountPath: /tmp
