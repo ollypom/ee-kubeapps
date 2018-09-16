@@ -8,3 +8,14 @@ rules:
   verbs:     ['use']
   resourceNames:
   - psp-default-policy
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: admin-psp-role
+rules:
+- apiGroups: ['extensions']
+  resources: ['podsecuritypolicies']
+  verbs:     ['use']
+  resourceNames:
+  - psp-admin-policy
