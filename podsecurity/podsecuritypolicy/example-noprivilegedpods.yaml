@@ -2,8 +2,13 @@ apiVersion: extensions/v1beta1
 kind: PodSecurityPolicy
 metadata:
   name: psp-default-policy
+  annotations:
+    seccomp.security.alpha.kubernetes.io/allowedProfileNames: 'docker/default'
+    apparmor.security.beta.kubernetes.io/allowedProfileNames: 'runtime/default'
+    seccomp.security.alpha.kubernetes.io/defaultProfileName:  'docker/default'
+    apparmor.security.beta.kubernetes.io/defaultProfileName:  'runtime/default'
 spec:
-  privileged: false  # Don't allow privileged pods!
+  privileged: True  # Don't allow privileged pods!
   # The rest fills in some required fields.
   seLinux:
     rule: RunAsAny

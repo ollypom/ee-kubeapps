@@ -4,7 +4,7 @@ metadata:
   name: demopod
 spec:
   containers:
-    - name:  mariadb
-      image: bitnami/mariadb:10.1.24-r2
+    - name:  demopod
+      image: nginx
 #      securityContext:
 #        privileged: true
