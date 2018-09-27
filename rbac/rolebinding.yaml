@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: jeff:edit
+  namespace: default
+subjects:
+- kind: User
+  name: jeff
+  apiGroup: ""
+roleRef:
+  kind: ClusterRole
+  name: edit
+  apiGroup: ""
