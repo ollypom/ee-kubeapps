@@ -17,6 +17,7 @@ spec:
     rule: RunAsAny
   volumes:
   - '*'
+  hostPID: true
   hostNetwork: true
   hostPorts:
   - min: 1
