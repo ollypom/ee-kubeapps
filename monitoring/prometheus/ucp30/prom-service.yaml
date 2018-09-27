@@ -20,7 +20,7 @@ metadata:
   namespace: monitoring
 spec:
   rules:
-  - host: prom.apps.olly.dtcntr.net
+  - host: prom.tmp.olly.dtcntr.net
     http:
       paths:
       - backend:

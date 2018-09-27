@@ -16,7 +16,6 @@ data:
       scheme: https
       kubernetes_sd_configs:
       - role: node
-## Pods require Heapster to be running as it hits the /metrics api
 ##    - job_name: 'kubernetes-pods'
 ##      tls_config:
 ##        ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt

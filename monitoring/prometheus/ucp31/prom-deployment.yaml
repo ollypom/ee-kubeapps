@@ -1,0 +1,57 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  labels:
+    name: prometheus
+  name: prometheus
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: prometheus
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        name: prometheus
+      annotations:
+        seccomp.security.alpha.kubernetes.io/pod: docker/default  
+#        prometheus.io/scrape: "true"
+#        prometheus.io/port: "9090"
+    spec:
+      serviceAccountName: prometheus
+      containers:
+      - name: prometheus
+        image: 'docker.io/prom/prometheus:v2.4.0'
+        command:
+        - /bin/prometheus
+        args:
+        - "--config.file=/etc/prometheus/prometheus.yml"
+        - "--storage.tsdb.path=/prometheus"
+#        - "--log.level=debug"
+        ports:
+        - containerPort: 9090
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 500m
+            memory: 2500Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        volumeMounts:
+        - mountPath: /prometheus
+          name: prom-data
+        - mountPath: /etc/prometheus
+          name: config-volume
+      restartPolicy: Always
+      volumes:
+##      - emptyDir: {}
+##        name: data
+      - configMap:
+          name: prometheus-config
+        name: config-volume
+      - name: prom-data
+        persistentVolumeClaim:
+          claimName: prom-pvc

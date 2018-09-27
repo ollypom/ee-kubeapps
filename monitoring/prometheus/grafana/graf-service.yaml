@@ -11,7 +11,6 @@ spec:
   selector:
     name: grafana
 ---
-# Create the ingress resource
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -19,7 +18,7 @@ metadata:
   namespace: monitoring
 spec:
   rules:
-  - host: promgraf.apps.olly.dtcntr.net
+  - host: promgraf.apps.beta.olly.dtcntr.net
     http:
       paths:
       - backend:

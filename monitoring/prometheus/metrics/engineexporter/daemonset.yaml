@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: engine-exporter
+  namespace: monitoring
+spec:
+  selector:
+    matchLabels:
+      app: engine-exporter
+  template: 
+    metadata:
+      labels:
+        app: engine-exporter
+      annotations:
+        prometheus.io.scrape: 'true'
+        prometheus.io/port: '9323'
+    spec:
+      containers:
+      - name: metrics-api
+        image: alpine/socat
+        args: ["tcp-listen:9323,reuseaddr,fork", "tcp:172.18.0.1:9323"]
+        ports:
+        - containerPort: 9323
