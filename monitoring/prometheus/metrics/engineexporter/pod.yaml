@@ -5,6 +5,7 @@ metadata:
 spec:
   containers:
     - name:  demopod
-      image: nginx
-#      securityContext:
-#        privileged: true
+      image: alpine
+      command:
+       - sleep
+       - "5000"

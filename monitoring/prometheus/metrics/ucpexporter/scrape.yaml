@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: getinventory
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: getinventory
+  template:
+    metadata:
+      labels:
+        app: getinventory
+    spec:
+      containers:
+      - name: inventory
+        image: alpine
+        command:
+          - sleep
+          - '500000'
+        volumeMounts:
+        - name: bundle
+          mountPath: /bundle
+      volumes:
+      - name: bundle
+        secret:
+          secretName: prometheus

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inventory-config
+  namespace: monitoring
+data:
+  inventory.json: |-
+    [
+      {
+        "targets":[
+            "172.31.8.8:12376",
+            "172.31.13.181:12376",
+            "172.31.1.128:12376",
+            "172.31.13.181:8443"
+        ]
+      }
+    ]

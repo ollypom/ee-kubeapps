@@ -1,58 +1,22 @@
-apiVersion: apps/v1beta2
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
+  name: nginx
   labels:
-    app: demo
-  name: demo-app
-  namespace: psp-example
+    app: nginx
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: demo
+      app: nginx
   template:
     metadata:
       labels:
-        app: demo
+        app: nginx
     spec:
-      serviceAccountName: psp-serviceaccount
       containers:
-      - image: docker.io/ehazlett/docker-demo
-#        securityContext:
-#          privileged: true
-        name: demo-app
-        env: 
-        - name: VERSION
-          value: "0.1"
-        livenessProbe:
-          failureThreshold: 3
-          httpGet:
-            path: /ping
-            port: 8080
-            scheme: HTTP
-          initialDelaySeconds: 10
-          periodSeconds: 10
-          successThreshold: 1
-          timeoutSeconds: 1
-        readinessProbe:
-          failureThreshold: 3
-          httpGet:
-            path: /ping
-            port: 8080
-            scheme: HTTP
-          periodSeconds: 10
-          successThreshold: 1
-          timeoutSeconds: 1
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: demo-app
-  namespace: psp-example
-  labels:
-    app: demo
-spec:
-  ports:
-    - port: 8080
-  selector:
-    app: demo
+        - name: nginx
+          image: nginx
+          ports:
+          - name: http
+            containerPort: 80

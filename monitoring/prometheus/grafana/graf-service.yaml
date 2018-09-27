@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prom-grafana
+  namespace: monitoring
+spec:
+  ports:
+  - port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    name: grafana
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: prom-graf
+  namespace: monitoring
+spec:
+  rules:
+  - host: promgraf.apps.beta.olly.dtcntr.net
+    http:
+      paths:
+      - backend:
+          serviceName: prom-grafana
+          servicePort: 3000
