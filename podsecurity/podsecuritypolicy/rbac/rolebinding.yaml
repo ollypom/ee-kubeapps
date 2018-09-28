@@ -1,0 +1,38 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: psp:privileged:admin
+roleRef:
+  kind: ClusterRole
+  name: psp:privileged
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: User
+  name: kubeadm-admin
+  namespace: default
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: psp:unprivileged:user
+roleRef:
+  kind: ClusterRole
+  name: psp:unprivileged
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: User
+  name: jeff
+  namespace: default
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: psp:unprivileged:sa
+roleRef:
+  kind: ClusterRole
+  name: psp:unprivileged
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: default
