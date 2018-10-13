@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   rules:
-  - host: hello.demo.olly.dtcntr.net
+  - host: demo-app.k8s.andreas.dtcntr.net
     http:
       paths:
       - backend:
