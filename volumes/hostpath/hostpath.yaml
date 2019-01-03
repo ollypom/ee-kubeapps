@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-pd
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - worker0.local
+  containers:
+  - image: alpine
+    command:
+    - sleep
+    - "5000"
+    name: test-container
+    volumeMounts:
+    - mountPath: /data
+      name: hostpath
+  volumes:
+  - name: hostpath
+    hostPath:
+      path: /home/ubuntu/data

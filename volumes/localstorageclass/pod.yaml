@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo
+spec:
+  containers:
+    - name:  demo
+      image: alpine
+      command:
+      - sleep
+      - "50000"
+      volumeMounts:
+      - name: data
+        #        mountPropagation: "None"
+        mountPath: /data
+  volumes:
+  - name: data
+    persistentVolumeClaim:
+      claimName: localpvc
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: localpvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: local-storage
