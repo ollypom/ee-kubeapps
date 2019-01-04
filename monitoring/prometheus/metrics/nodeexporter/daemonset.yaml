@@ -18,7 +18,7 @@ spec:
       hostPID: true
       containers:
       - name:  prom-node-exporter
-        image: prom/node-exporter:v0.16.0
+        image: prom/node-exporter:v0.17.0
         securityContext:
           privileged: true
         ports:

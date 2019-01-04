@@ -33,6 +33,18 @@ data:
         regex: '9323'
       - source_labels: [__meta_kubernetes_pod_node_name]
         target_label: node            
+    - job_name: cadvisor-exporter
+      kubernetes_sd_configs:
+      -  role: pod
+      relabel_configs:
+      - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+        action: keep
+        regex: true
+      - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_port]
+        action: keep
+        regex: '8080'
+      - source_labels: [__meta_kubernetes_pod_node_name]
+        target_label: node            
 ##    - job_name: docker-engine
 ##      static_configs:
 ##          - targets: ['172.31.13.181:9323', '172.31.1.128:9323', '172.31.8.8:9323']

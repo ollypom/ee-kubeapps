@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
@@ -12,7 +12,6 @@ spec:
       name: prometheus
   template:
     metadata:
-      creationTimestamp: null
       labels:
         name: prometheus
       annotations:
@@ -47,11 +46,9 @@ spec:
           name: config-volume
       restartPolicy: Always
       volumes:
-##      - emptyDir: {}
-##        name: data
-      - configMap:
+      - name: config-volume
+        configMap:
           name: prometheus-config
-        name: config-volume
       - name: prom-data
         persistentVolumeClaim:
           claimName: prom-pvc

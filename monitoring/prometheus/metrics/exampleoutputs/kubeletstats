@@ -1,0 +1,3977 @@
+{
+  "name": "/",
+  "subcontainers": [
+   {
+    "name": "/cbad6fcb4b3e9a0b51237d9585bd693748796ffaaac708bcaa0625000df105d2"
+   },
+   {
+    "name": "/docker"
+   },
+   {
+    "name": "/kubepods"
+   },
+   {
+    "name": "/system.slice"
+   },
+   {
+    "name": "/user.slice"
+   }
+  ],
+  "spec": {
+   "creation_time": "2018-09-15T13:06:59.683Z",
+   "has_cpu": true,
+   "cpu": {
+    "limit": 1024,
+    "max_limit": 0,
+    "mask": "0-1",
+    "period": 100000
+   },
+   "has_memory": true,
+   "memory": {
+    "limit": 8200540160,
+    "reservation": 9223372036854771712
+   },
+   "has_network": true,
+   "has_filesystem": true,
+   "has_diskio": true,
+   "has_custom_metrics": false
+  },
+  "stats": [
+   {
+    "timestamp": "2018-09-24T15:14:02.613112317Z",
+    "cpu": {
+     "usage": {
+      "total": 284478825597746,
+      "user": 123566310000000,
+      "system": 91613130000000
+     },
+     "cfs": {
+      "periods": 0,
+      "throttled_periods": 0,
+      "throttled_time": 0
+     },
+     "schedstat": {
+      "run_time": 0,
+      "runqueue_time": 0,
+      "run_periods": 0
+     },
+     "load_average": 0
+    },
+    "diskio": {
+     "io_service_bytes": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 16160418304,
+        "Read": 25438720,
+        "Sync": 151015424,
+        "Total": 16311433728,
+        "Write": 16285995008
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 4721925632,
+        "Read": 295202816,
+        "Sync": 313890304,
+        "Total": 5035815936,
+        "Write": 4740613120
+       }
+      }
+     ],
+     "io_serviced": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 1275507,
+        "Read": 1099,
+        "Sync": 32435,
+        "Total": 1307942,
+        "Write": 1306843
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 235314,
+        "Read": 10292,
+        "Sync": 41212,
+        "Total": 276526,
+        "Write": 266234
+       }
+      }
+     ]
+    },
+    "memory": {
+     "usage": 7147528192,
+     "max_usage": 6104825856,
+     "cache": 1200701440,
+     "rss": 1620905984,
+     "swap": 0,
+     "working_set": 5313835008,
+     "failcnt": 0,
+     "container_data": {
+      "pgfault": 64370115,
+      "pgmajfault": 742
+     },
+     "hierarchical_data": {
+      "pgfault": 64370115,
+      "pgmajfault": 742
+     }
+    },
+    "network": {
+     "name": "cali68dccee4986",
+     "rx_bytes": 4982927,
+     "rx_packets": 65463,
+     "rx_errors": 0,
+     "rx_dropped": 0,
+     "tx_bytes": 4320620,
+     "tx_packets": 61951,
+     "tx_errors": 0,
+     "tx_dropped": 0,
+     "interfaces": [
+      {
+       "name": "cali68dccee4986",
+       "rx_bytes": 4982927,
+       "rx_packets": 65463,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 4320620,
+       "tx_packets": 61951,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali765f326601c",
+       "rx_bytes": 223280253,
+       "rx_packets": 1277712,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 126885718,
+       "tx_packets": 1091296,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali2055b11269a",
+       "rx_bytes": 492990819,
+       "rx_packets": 3105067,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 682051293,
+       "tx_packets": 3240939,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "eth0",
+       "rx_bytes": 4619974404,
+       "rx_packets": 9876317,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 3036144599,
+       "tx_packets": 8291523,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali9de0255549b",
+       "rx_bytes": 360468238,
+       "rx_packets": 1374688,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 478137841,
+       "tx_packets": 1237646,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "tunl0",
+       "rx_bytes": 6179102,
+       "rx_packets": 26594,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 12611642,
+       "tx_packets": 40315,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      }
+     ],
+     "tcp": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "tcp6": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "udp": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     },
+     "udp6": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     }
+    },
+    "filesystem": [
+     {
+      "device": "/dev/xvda2",
+      "type": "vfs",
+      "capacity": 10724814848,
+      "usage": 3631058944,
+      "base_usage": 0,
+      "available": 7093755904,
+      "has_inodes": true,
+      "inodes": 5241840,
+      "inodes_free": 5207620,
+      "reads_completed": 11706,
+      "reads_merged": 1,
+      "sectors_read": 605048,
+      "read_time": 12936,
+      "writes_completed": 254047,
+      "writes_merged": 31213,
+      "sectors_written": 9634830,
+      "write_time": 1550196,
+      "io_in_progress": 0,
+      "io_time": 44480,
+      "weighted_io_time": 1563072
+     },
+     {
+      "device": "/dev/xvdb1",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2773762048,
+      "base_usage": 0,
+      "available": 18689540096,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 463,
+      "reads_merged": 0,
+      "sectors_read": 24161,
+      "read_time": 464,
+      "writes_completed": 12392100,
+      "writes_merged": 416110,
+      "sectors_written": 145293955,
+      "write_time": 8030947,
+      "io_in_progress": 0,
+      "io_time": 3885474,
+      "weighted_io_time": 8021681
+     },
+     {
+      "device": "shm",
+      "type": "vfs",
+      "capacity": 67108864,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 67108864,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001041,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "overlay",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2773762048,
+      "base_usage": 0,
+      "available": 18689540096,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "tmpfs",
+      "type": "vfs",
+      "capacity": 4100268032,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 4100268032,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001026,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     }
+    ],
+    "task_stats": {
+     "nr_sleeping": 0,
+     "nr_running": 0,
+     "nr_stopped": 0,
+     "nr_uninterruptible": 0,
+     "nr_io_wait": 0
+    }
+   },
+   {
+    "timestamp": "2018-09-24T15:14:12.641054123Z",
+    "cpu": {
+     "usage": {
+      "total": 284482175468200,
+      "user": 123567720000000,
+      "system": 91614190000000
+     },
+     "cfs": {
+      "periods": 0,
+      "throttled_periods": 0,
+      "throttled_time": 0
+     },
+     "schedstat": {
+      "run_time": 0,
+      "runqueue_time": 0,
+      "run_periods": 0
+     },
+     "load_average": 0
+    },
+    "diskio": {
+     "io_service_bytes": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 16160434688,
+        "Read": 25438720,
+        "Sync": 151015424,
+        "Total": 16311450112,
+        "Write": 16286011392
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 4721925632,
+        "Read": 295202816,
+        "Sync": 313890304,
+        "Total": 5035815936,
+        "Write": 4740613120
+       }
+      }
+     ],
+     "io_serviced": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 1275508,
+        "Read": 1099,
+        "Sync": 32435,
+        "Total": 1307943,
+        "Write": 1306844
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 235314,
+        "Read": 10292,
+        "Sync": 41212,
+        "Total": 276526,
+        "Write": 266234
+       }
+      }
+     ]
+    },
+    "memory": {
+     "usage": 7146237952,
+     "max_usage": 6104825856,
+     "cache": 1200701440,
+     "rss": 1619587072,
+     "swap": 0,
+     "working_set": 5312548864,
+     "failcnt": 0,
+     "container_data": {
+      "pgfault": 64371104,
+      "pgmajfault": 742
+     },
+     "hierarchical_data": {
+      "pgfault": 64371104,
+      "pgmajfault": 742
+     }
+    },
+    "network": {
+     "name": "cali68dccee4986",
+     "rx_bytes": 4982927,
+     "rx_packets": 65463,
+     "rx_errors": 0,
+     "rx_dropped": 0,
+     "tx_bytes": 4320620,
+     "tx_packets": 61951,
+     "tx_errors": 0,
+     "tx_dropped": 0,
+     "interfaces": [
+      {
+       "name": "cali68dccee4986",
+       "rx_bytes": 4982927,
+       "rx_packets": 65463,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 4320620,
+       "tx_packets": 61951,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali765f326601c",
+       "rx_bytes": 223284720,
+       "rx_packets": 1277738,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 126888525,
+       "tx_packets": 1091318,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali2055b11269a",
+       "rx_bytes": 492997865,
+       "rx_packets": 3105112,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 682060478,
+       "tx_packets": 3240984,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "eth0",
+       "rx_bytes": 4620077007,
+       "rx_packets": 9876476,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 3036178855,
+       "tx_packets": 8291629,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali9de0255549b",
+       "rx_bytes": 360472441,
+       "rx_packets": 1374711,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 478145082,
+       "tx_packets": 1237666,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "tunl0",
+       "rx_bytes": 6179102,
+       "rx_packets": 26594,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 12611642,
+       "tx_packets": 40315,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      }
+     ],
+     "tcp": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "tcp6": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "udp": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     },
+     "udp6": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     }
+    },
+    "filesystem": [
+     {
+      "device": "shm",
+      "type": "vfs",
+      "capacity": 67108864,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 67108864,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001041,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "overlay",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2773762048,
+      "base_usage": 0,
+      "available": 18689540096,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "tmpfs",
+      "type": "vfs",
+      "capacity": 4100268032,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 4100268032,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001026,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "/dev/xvda2",
+      "type": "vfs",
+      "capacity": 10724814848,
+      "usage": 3631312896,
+      "base_usage": 0,
+      "available": 7093501952,
+      "has_inodes": true,
+      "inodes": 5241840,
+      "inodes_free": 5207620,
+      "reads_completed": 11706,
+      "reads_merged": 1,
+      "sectors_read": 605048,
+      "read_time": 12936,
+      "writes_completed": 254047,
+      "writes_merged": 31213,
+      "sectors_written": 9634830,
+      "write_time": 1550196,
+      "io_in_progress": 0,
+      "io_time": 44480,
+      "weighted_io_time": 1563072
+     },
+     {
+      "device": "/dev/xvdb1",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2773762048,
+      "base_usage": 0,
+      "available": 18689540096,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 463,
+      "reads_merged": 0,
+      "sectors_read": 24161,
+      "read_time": 464,
+      "writes_completed": 12392230,
+      "writes_merged": 416110,
+      "sectors_written": 145295259,
+      "write_time": 8031011,
+      "io_in_progress": 0,
+      "io_time": 3885517,
+      "weighted_io_time": 8021745
+     }
+    ],
+    "task_stats": {
+     "nr_sleeping": 0,
+     "nr_running": 0,
+     "nr_stopped": 0,
+     "nr_uninterruptible": 0,
+     "nr_io_wait": 0
+    }
+   },
+   {
+    "timestamp": "2018-09-24T15:14:22.673275634Z",
+    "cpu": {
+     "usage": {
+      "total": 284486376212492,
+      "user": 123569380000000,
+      "system": 91615770000000
+     },
+     "cfs": {
+      "periods": 0,
+      "throttled_periods": 0,
+      "throttled_time": 0
+     },
+     "schedstat": {
+      "run_time": 0,
+      "runqueue_time": 0,
+      "run_periods": 0
+     },
+     "load_average": 0
+    },
+    "diskio": {
+     "io_service_bytes": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 16160442880,
+        "Read": 25438720,
+        "Sync": 151015424,
+        "Total": 16311458304,
+        "Write": 16286019584
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 4722012672,
+        "Read": 295202816,
+        "Sync": 313895936,
+        "Total": 5035908608,
+        "Write": 4740705792
+       }
+      }
+     ],
+     "io_serviced": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 1275509,
+        "Read": 1099,
+        "Sync": 32435,
+        "Total": 1307944,
+        "Write": 1306845
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 235331,
+        "Read": 10292,
+        "Sync": 41213,
+        "Total": 276544,
+        "Write": 266252
+       }
+      }
+     ]
+    },
+    "memory": {
+     "usage": 7147700224,
+     "max_usage": 6104825856,
+     "cache": 1200701440,
+     "rss": 1621012480,
+     "swap": 0,
+     "working_set": 5314002944,
+     "failcnt": 0,
+     "container_data": {
+      "pgfault": 64371559,
+      "pgmajfault": 742
+     },
+     "hierarchical_data": {
+      "pgfault": 64371559,
+      "pgmajfault": 742
+     }
+    },
+    "network": {
+     "name": "cali68dccee4986",
+     "rx_bytes": 4983035,
+     "rx_packets": 65465,
+     "rx_errors": 0,
+     "rx_dropped": 0,
+     "tx_bytes": 4320728,
+     "tx_packets": 61953,
+     "tx_errors": 0,
+     "tx_dropped": 0,
+     "interfaces": [
+      {
+       "name": "cali68dccee4986",
+       "rx_bytes": 4983035,
+       "rx_packets": 65465,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 4320728,
+       "tx_packets": 61953,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali765f326601c",
+       "rx_bytes": 223288227,
+       "rx_packets": 1277757,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 126890079,
+       "tx_packets": 1091334,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali2055b11269a",
+       "rx_bytes": 493002832,
+       "rx_packets": 3105145,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 682068263,
+       "tx_packets": 3241018,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "eth0",
+       "rx_bytes": 4620106624,
+       "rx_packets": 9876588,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 3036219640,
+       "tx_packets": 8291739,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali9de0255549b",
+       "rx_bytes": 360478475,
+       "rx_packets": 1374723,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 478152046,
+       "tx_packets": 1237678,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "tunl0",
+       "rx_bytes": 6179102,
+       "rx_packets": 26594,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 12611642,
+       "tx_packets": 40315,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      }
+     ],
+     "tcp": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "tcp6": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "udp": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     },
+     "udp6": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     }
+    },
+    "filesystem": [
+     {
+      "device": "/dev/xvdb1",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2773762048,
+      "base_usage": 0,
+      "available": 18689540096,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 463,
+      "reads_merged": 0,
+      "sectors_read": 24161,
+      "read_time": 464,
+      "writes_completed": 12392406,
+      "writes_merged": 416110,
+      "sectors_written": 145297019,
+      "write_time": 8031099,
+      "io_in_progress": 0,
+      "io_time": 3885586,
+      "weighted_io_time": 8021833
+     },
+     {
+      "device": "shm",
+      "type": "vfs",
+      "capacity": 67108864,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 67108864,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001041,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "overlay",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2773762048,
+      "base_usage": 0,
+      "available": 18689540096,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "tmpfs",
+      "type": "vfs",
+      "capacity": 4100268032,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 4100268032,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001026,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "/dev/xvda2",
+      "type": "vfs",
+      "capacity": 10724814848,
+      "usage": 3631312896,
+      "base_usage": 0,
+      "available": 7093501952,
+      "has_inodes": true,
+      "inodes": 5241840,
+      "inodes_free": 5207620,
+      "reads_completed": 11706,
+      "reads_merged": 1,
+      "sectors_read": 605048,
+      "read_time": 12936,
+      "writes_completed": 254062,
+      "writes_merged": 31216,
+      "sectors_written": 9635011,
+      "write_time": 1550210,
+      "io_in_progress": 0,
+      "io_time": 44481,
+      "weighted_io_time": 1563086
+     }
+    ],
+    "task_stats": {
+     "nr_sleeping": 0,
+     "nr_running": 0,
+     "nr_stopped": 0,
+     "nr_uninterruptible": 0,
+     "nr_io_wait": 0
+    }
+   },
+   {
+    "timestamp": "2018-09-24T15:14:32.700694449Z",
+    "cpu": {
+     "usage": {
+      "total": 284489718757522,
+      "user": 123570720000000,
+      "system": 91616880000000
+     },
+     "cfs": {
+      "periods": 0,
+      "throttled_periods": 0,
+      "throttled_time": 0
+     },
+     "schedstat": {
+      "run_time": 0,
+      "runqueue_time": 0,
+      "run_periods": 0
+     },
+     "load_average": 0
+    },
+    "diskio": {
+     "io_service_bytes": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 16161031168,
+        "Read": 25438720,
+        "Sync": 151022080,
+        "Total": 16312053248,
+        "Write": 16286614528
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 4722016768,
+        "Read": 295202816,
+        "Sync": 313895936,
+        "Total": 5035912704,
+        "Write": 4740709888
+       }
+      }
+     ],
+     "io_serviced": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 1275558,
+        "Read": 1099,
+        "Sync": 32437,
+        "Total": 1307995,
+        "Write": 1306896
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 235332,
+        "Read": 10292,
+        "Sync": 41213,
+        "Total": 276545,
+        "Write": 266253
+       }
+      }
+     ]
+    },
+    "memory": {
+     "usage": 7147610112,
+     "max_usage": 6104825856,
+     "cache": 1200701440,
+     "rss": 1620897792,
+     "swap": 0,
+     "working_set": 5313908736,
+     "failcnt": 0,
+     "container_data": {
+      "pgfault": 64371998,
+      "pgmajfault": 742
+     },
+     "hierarchical_data": {
+      "pgfault": 64371998,
+      "pgmajfault": 742
+     }
+    },
+    "network": {
+     "name": "cali68dccee4986",
+     "rx_bytes": 4983394,
+     "rx_packets": 65468,
+     "rx_errors": 0,
+     "rx_dropped": 0,
+     "tx_bytes": 4320962,
+     "tx_packets": 61955,
+     "tx_errors": 0,
+     "tx_dropped": 0,
+     "interfaces": [
+      {
+       "name": "cali68dccee4986",
+       "rx_bytes": 4983394,
+       "rx_packets": 65468,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 4320962,
+       "tx_packets": 61955,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali765f326601c",
+       "rx_bytes": 223288227,
+       "rx_packets": 1277757,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 126890079,
+       "tx_packets": 1091334,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali2055b11269a",
+       "rx_bytes": 493010307,
+       "rx_packets": 3105192,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 682077818,
+       "tx_packets": 3241065,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "eth0",
+       "rx_bytes": 4620138654,
+       "rx_packets": 9876695,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 3036256294,
+       "tx_packets": 8291840,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali9de0255549b",
+       "rx_bytes": 360482320,
+       "rx_packets": 1374744,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 478156217,
+       "tx_packets": 1237696,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "tunl0",
+       "rx_bytes": 6179185,
+       "rx_packets": 26595,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 12611781,
+       "tx_packets": 40317,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      }
+     ],
+     "tcp": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "tcp6": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "udp": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     },
+     "udp6": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     }
+    },
+    "filesystem": [
+     {
+      "device": "tmpfs",
+      "type": "vfs",
+      "capacity": 4100268032,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 4100268032,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001026,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "/dev/xvda2",
+      "type": "vfs",
+      "capacity": 10724814848,
+      "usage": 3631292416,
+      "base_usage": 0,
+      "available": 7093522432,
+      "has_inodes": true,
+      "inodes": 5241840,
+      "inodes_free": 5207620,
+      "reads_completed": 11706,
+      "reads_merged": 1,
+      "sectors_read": 605048,
+      "read_time": 12936,
+      "writes_completed": 254066,
+      "writes_merged": 31216,
+      "sectors_written": 9635041,
+      "write_time": 1550211,
+      "io_in_progress": 0,
+      "io_time": 44482,
+      "weighted_io_time": 1563087
+     },
+     {
+      "device": "/dev/xvdb1",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2773762048,
+      "base_usage": 0,
+      "available": 18689540096,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 463,
+      "reads_merged": 0,
+      "sectors_read": 24161,
+      "read_time": 464,
+      "writes_completed": 12392592,
+      "writes_merged": 416126,
+      "sectors_written": 145299567,
+      "write_time": 8031224,
+      "io_in_progress": 0,
+      "io_time": 3885636,
+      "weighted_io_time": 8021958
+     },
+     {
+      "device": "shm",
+      "type": "vfs",
+      "capacity": 67108864,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 67108864,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001041,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "overlay",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2773762048,
+      "base_usage": 0,
+      "available": 18689540096,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     }
+    ],
+    "task_stats": {
+     "nr_sleeping": 0,
+     "nr_running": 0,
+     "nr_stopped": 0,
+     "nr_uninterruptible": 0,
+     "nr_io_wait": 0
+    }
+   },
+   {
+    "timestamp": "2018-09-24T15:14:42.728107284Z",
+    "cpu": {
+     "usage": {
+      "total": 284497840122400,
+      "user": 123577200000000,
+      "system": 91617870000000
+     },
+     "cfs": {
+      "periods": 0,
+      "throttled_periods": 0,
+      "throttled_time": 0
+     },
+     "schedstat": {
+      "run_time": 0,
+      "runqueue_time": 0,
+      "run_periods": 0
+     },
+     "load_average": 0
+    },
+    "diskio": {
+     "io_service_bytes": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 16161031168,
+        "Read": 25438720,
+        "Sync": 151022080,
+        "Total": 16312053248,
+        "Write": 16286614528
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 4722037248,
+        "Read": 295202816,
+        "Sync": 313895936,
+        "Total": 5035933184,
+        "Write": 4740730368
+       }
+      }
+     ],
+     "io_serviced": [
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 235333,
+        "Read": 10292,
+        "Sync": 41213,
+        "Total": 276546,
+        "Write": 266254
+       }
+      },
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 1275558,
+        "Read": 1099,
+        "Sync": 32437,
+        "Total": 1307995,
+        "Write": 1306896
+       }
+      }
+     ]
+    },
+    "memory": {
+     "usage": 7170359296,
+     "max_usage": 6104825856,
+     "cache": 1200701440,
+     "rss": 1643614208,
+     "swap": 0,
+     "working_set": 5336653824,
+     "failcnt": 0,
+     "container_data": {
+      "pgfault": 64372472,
+      "pgmajfault": 742
+     },
+     "hierarchical_data": {
+      "pgfault": 64372472,
+      "pgmajfault": 742
+     }
+    },
+    "network": {
+     "name": "cali68dccee4986",
+     "rx_bytes": 4983394,
+     "rx_packets": 65468,
+     "rx_errors": 0,
+     "rx_dropped": 0,
+     "tx_bytes": 4320962,
+     "tx_packets": 61955,
+     "tx_errors": 0,
+     "tx_dropped": 0,
+     "interfaces": [
+      {
+       "name": "cali68dccee4986",
+       "rx_bytes": 4983394,
+       "rx_packets": 65468,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 4320962,
+       "tx_packets": 61955,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali765f326601c",
+       "rx_bytes": 223292695,
+       "rx_packets": 1277781,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 126892299,
+       "tx_packets": 1091352,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali2055b11269a",
+       "rx_bytes": 493017360,
+       "rx_packets": 3105237,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 682087069,
+       "tx_packets": 3241111,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "eth0",
+       "rx_bytes": 4620158757,
+       "rx_packets": 9876776,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 3036285078,
+       "tx_packets": 8291915,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali9de0255549b",
+       "rx_bytes": 360486590,
+       "rx_packets": 1374768,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 478169850,
+       "tx_packets": 1237717,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "tunl0",
+       "rx_bytes": 6179185,
+       "rx_packets": 26595,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 12611781,
+       "tx_packets": 40317,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      }
+     ],
+     "tcp": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "tcp6": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "udp": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     },
+     "udp6": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     }
+    },
+    "filesystem": [
+     {
+      "device": "overlay",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771070976,
+      "base_usage": 0,
+      "available": 18692231168,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "tmpfs",
+      "type": "vfs",
+      "capacity": 4100268032,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 4100268032,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001026,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "/dev/xvda2",
+      "type": "vfs",
+      "capacity": 10724814848,
+      "usage": 3631292416,
+      "base_usage": 0,
+      "available": 7093522432,
+      "has_inodes": true,
+      "inodes": 5241840,
+      "inodes_free": 5207620,
+      "reads_completed": 11706,
+      "reads_merged": 1,
+      "sectors_read": 605048,
+      "read_time": 12936,
+      "writes_completed": 254067,
+      "writes_merged": 31216,
+      "sectors_written": 9635081,
+      "write_time": 1550211,
+      "io_in_progress": 0,
+      "io_time": 44482,
+      "weighted_io_time": 1563087
+     },
+     {
+      "device": "/dev/xvdb1",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771070976,
+      "base_usage": 0,
+      "available": 18692231168,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 463,
+      "reads_merged": 0,
+      "sectors_read": 24161,
+      "read_time": 464,
+      "writes_completed": 12392715,
+      "writes_merged": 416126,
+      "sectors_written": 145300803,
+      "write_time": 8031289,
+      "io_in_progress": 0,
+      "io_time": 3885681,
+      "weighted_io_time": 8022023
+     },
+     {
+      "device": "shm",
+      "type": "vfs",
+      "capacity": 67108864,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 67108864,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001041,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     }
+    ],
+    "task_stats": {
+     "nr_sleeping": 0,
+     "nr_running": 0,
+     "nr_stopped": 0,
+     "nr_uninterruptible": 0,
+     "nr_io_wait": 0
+    }
+   },
+   {
+    "timestamp": "2018-09-24T15:14:52.760756828Z",
+    "cpu": {
+     "usage": {
+      "total": 284502318731291,
+      "user": 123579420000000,
+      "system": 91619250000000
+     },
+     "cfs": {
+      "periods": 0,
+      "throttled_periods": 0,
+      "throttled_time": 0
+     },
+     "schedstat": {
+      "run_time": 0,
+      "runqueue_time": 0,
+      "run_periods": 0
+     },
+     "load_average": 0
+    },
+    "diskio": {
+     "io_service_bytes": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 16161051648,
+        "Read": 25438720,
+        "Sync": 151022080,
+        "Total": 16312073728,
+        "Write": 16286635008
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 4722095616,
+        "Read": 295202816,
+        "Sync": 313900032,
+        "Total": 5035995648,
+        "Write": 4740792832
+       }
+      }
+     ],
+     "io_serviced": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 1275560,
+        "Read": 1099,
+        "Sync": 32437,
+        "Total": 1307997,
+        "Write": 1306898
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 235343,
+        "Read": 10292,
+        "Sync": 41214,
+        "Total": 276557,
+        "Write": 266265
+       }
+      }
+     ]
+    },
+    "memory": {
+     "usage": 7180173312,
+     "max_usage": 6104825856,
+     "cache": 1200701440,
+     "rss": 1653276672,
+     "swap": 0,
+     "working_set": 5346455552,
+     "failcnt": 0,
+     "container_data": {
+      "pgfault": 64372865,
+      "pgmajfault": 742
+     },
+     "hierarchical_data": {
+      "pgfault": 64372865,
+      "pgmajfault": 742
+     }
+    },
+    "network": {
+     "name": "cali68dccee4986",
+     "rx_bytes": 4983394,
+     "rx_packets": 65468,
+     "rx_errors": 0,
+     "rx_dropped": 0,
+     "tx_bytes": 4320962,
+     "tx_packets": 61955,
+     "tx_errors": 0,
+     "tx_dropped": 0,
+     "interfaces": [
+      {
+       "name": "cali68dccee4986",
+       "rx_bytes": 4983394,
+       "rx_packets": 65468,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 4320962,
+       "tx_packets": 61955,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali765f326601c",
+       "rx_bytes": 223296996,
+       "rx_packets": 1277804,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 126894914,
+       "tx_packets": 1091375,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali2055b11269a",
+       "rx_bytes": 493022137,
+       "rx_packets": 3105268,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 682094554,
+       "tx_packets": 3241142,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "eth0",
+       "rx_bytes": 4620182259,
+       "rx_packets": 9876886,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 3036318206,
+       "tx_packets": 8292019,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali9de0255549b",
+       "rx_bytes": 360491999,
+       "rx_packets": 1374774,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 478170375,
+       "tx_packets": 1237723,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "tunl0",
+       "rx_bytes": 6179185,
+       "rx_packets": 26595,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 12611781,
+       "tx_packets": 40317,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      }
+     ],
+     "tcp": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "tcp6": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "udp": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     },
+     "udp6": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     }
+    },
+    "filesystem": [
+     {
+      "device": "tmpfs",
+      "type": "vfs",
+      "capacity": 4100268032,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 4100268032,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001026,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "/dev/xvda2",
+      "type": "vfs",
+      "capacity": 10724814848,
+      "usage": 3631292416,
+      "base_usage": 0,
+      "available": 7093522432,
+      "has_inodes": true,
+      "inodes": 5241840,
+      "inodes_free": 5207620,
+      "reads_completed": 11706,
+      "reads_merged": 1,
+      "sectors_read": 605048,
+      "read_time": 12936,
+      "writes_completed": 254076,
+      "writes_merged": 31218,
+      "sectors_written": 9635203,
+      "write_time": 1550213,
+      "io_in_progress": 0,
+      "io_time": 44483,
+      "weighted_io_time": 1563089
+     },
+     {
+      "device": "/dev/xvdb1",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771070976,
+      "base_usage": 0,
+      "available": 18692231168,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 463,
+      "reads_merged": 0,
+      "sectors_read": 24161,
+      "read_time": 464,
+      "writes_completed": 12392890,
+      "writes_merged": 416126,
+      "sectors_written": 145302510,
+      "write_time": 8031381,
+      "io_in_progress": 0,
+      "io_time": 3885742,
+      "weighted_io_time": 8022115
+     },
+     {
+      "device": "shm",
+      "type": "vfs",
+      "capacity": 67108864,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 67108864,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001041,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "overlay",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771070976,
+      "base_usage": 0,
+      "available": 18692231168,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     }
+    ],
+    "task_stats": {
+     "nr_sleeping": 0,
+     "nr_running": 0,
+     "nr_stopped": 0,
+     "nr_uninterruptible": 0,
+     "nr_io_wait": 0
+    }
+   },
+   {
+    "timestamp": "2018-09-24T15:15:02.796174484Z",
+    "cpu": {
+     "usage": {
+      "total": 284506026060089,
+      "user": 123580900000000,
+      "system": 91620540000000
+     },
+     "cfs": {
+      "periods": 0,
+      "throttled_periods": 0,
+      "throttled_time": 0
+     },
+     "schedstat": {
+      "run_time": 0,
+      "runqueue_time": 0,
+      "run_periods": 0
+     },
+     "load_average": 0
+    },
+    "diskio": {
+     "io_service_bytes": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 16161677312,
+        "Read": 25438720,
+        "Sync": 151026688,
+        "Total": 16312704000,
+        "Write": 16287265280
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 4722095616,
+        "Read": 295202816,
+        "Sync": 313900032,
+        "Total": 5035995648,
+        "Write": 4740792832
+       }
+      }
+     ],
+     "io_serviced": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 1275613,
+        "Read": 1099,
+        "Sync": 32438,
+        "Total": 1308051,
+        "Write": 1306952
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 235343,
+        "Read": 10292,
+        "Sync": 41214,
+        "Total": 276557,
+        "Write": 266265
+       }
+      }
+     ]
+    },
+    "memory": {
+     "usage": 7169806336,
+     "max_usage": 6104825856,
+     "cache": 1200701440,
+     "rss": 1642991616,
+     "swap": 0,
+     "working_set": 5336088576,
+     "failcnt": 0,
+     "container_data": {
+      "pgfault": 64373324,
+      "pgmajfault": 742
+     },
+     "hierarchical_data": {
+      "pgfault": 64373324,
+      "pgmajfault": 742
+     }
+    },
+    "network": {
+     "name": "cali68dccee4986",
+     "rx_bytes": 4983460,
+     "rx_packets": 65469,
+     "rx_errors": 0,
+     "rx_dropped": 0,
+     "tx_bytes": 4321028,
+     "tx_packets": 61956,
+     "tx_errors": 0,
+     "tx_dropped": 0,
+     "interfaces": [
+      {
+       "name": "cali68dccee4986",
+       "rx_bytes": 4983460,
+       "rx_packets": 65469,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 4321028,
+       "tx_packets": 61956,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali765f326601c",
+       "rx_bytes": 223297688,
+       "rx_packets": 1277811,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 126895487,
+       "tx_packets": 1091380,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali2055b11269a",
+       "rx_bytes": 493029120,
+       "rx_packets": 3105312,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 682103805,
+       "tx_packets": 3241188,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "eth0",
+       "rx_bytes": 4620289590,
+       "rx_packets": 9877050,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 3036372114,
+       "tx_packets": 8292138,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali9de0255549b",
+       "rx_bytes": 360495843,
+       "rx_packets": 1374795,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 478174342,
+       "tx_packets": 1237741,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "tunl0",
+       "rx_bytes": 6179185,
+       "rx_packets": 26595,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 12611781,
+       "tx_packets": 40317,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      }
+     ],
+     "tcp": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "tcp6": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "udp": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     },
+     "udp6": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     }
+    },
+    "filesystem": [
+     {
+      "device": "shm",
+      "type": "vfs",
+      "capacity": 67108864,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 67108864,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001041,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "overlay",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771070976,
+      "base_usage": 0,
+      "available": 18692231168,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "tmpfs",
+      "type": "vfs",
+      "capacity": 4100268032,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 4100268032,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001026,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "/dev/xvda2",
+      "type": "vfs",
+      "capacity": 10724814848,
+      "usage": 3631292416,
+      "base_usage": 0,
+      "available": 7093522432,
+      "has_inodes": true,
+      "inodes": 5241840,
+      "inodes_free": 5207620,
+      "reads_completed": 11706,
+      "reads_merged": 1,
+      "sectors_read": 605048,
+      "read_time": 12936,
+      "writes_completed": 254076,
+      "writes_merged": 31218,
+      "sectors_written": 9635203,
+      "write_time": 1550213,
+      "io_in_progress": 0,
+      "io_time": 44483,
+      "weighted_io_time": 1563089
+     },
+     {
+      "device": "/dev/xvdb1",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771070976,
+      "base_usage": 0,
+      "available": 18692231168,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 463,
+      "reads_merged": 0,
+      "sectors_read": 24161,
+      "read_time": 464,
+      "writes_completed": 12393077,
+      "writes_merged": 416146,
+      "sectors_written": 145305190,
+      "write_time": 8031538,
+      "io_in_progress": 0,
+      "io_time": 3885802,
+      "weighted_io_time": 8022271
+     }
+    ],
+    "task_stats": {
+     "nr_sleeping": 0,
+     "nr_running": 0,
+     "nr_stopped": 0,
+     "nr_uninterruptible": 0,
+     "nr_io_wait": 0
+    }
+   },
+   {
+    "timestamp": "2018-09-24T15:15:12.824266132Z",
+    "cpu": {
+     "usage": {
+      "total": 284508917220091,
+      "user": 123582040000000,
+      "system": 91621410000000
+     },
+     "cfs": {
+      "periods": 0,
+      "throttled_periods": 0,
+      "throttled_time": 0
+     },
+     "schedstat": {
+      "run_time": 0,
+      "runqueue_time": 0,
+      "run_periods": 0
+     },
+     "load_average": 0
+    },
+    "diskio": {
+     "io_service_bytes": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 16161681408,
+        "Read": 25438720,
+        "Sync": 151026688,
+        "Total": 16312708096,
+        "Write": 16287269376
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 4722124288,
+        "Read": 295202816,
+        "Sync": 313900032,
+        "Total": 5036024320,
+        "Write": 4740821504
+       }
+      }
+     ],
+     "io_serviced": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 1275614,
+        "Read": 1099,
+        "Sync": 32438,
+        "Total": 1308052,
+        "Write": 1306953
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 235344,
+        "Read": 10292,
+        "Sync": 41214,
+        "Total": 276558,
+        "Write": 266266
+       }
+      }
+     ]
+    },
+    "memory": {
+     "usage": 7177392128,
+     "max_usage": 6104825856,
+     "cache": 1200701440,
+     "rss": 1642151936,
+     "swap": 0,
+     "working_set": 5343674368,
+     "failcnt": 0,
+     "container_data": {
+      "pgfault": 64373756,
+      "pgmajfault": 742
+     },
+     "hierarchical_data": {
+      "pgfault": 64373756,
+      "pgmajfault": 742
+     }
+    },
+    "network": {
+     "name": "cali68dccee4986",
+     "rx_bytes": 4983852,
+     "rx_packets": 65473,
+     "rx_errors": 0,
+     "rx_dropped": 0,
+     "tx_bytes": 4321304,
+     "tx_packets": 61959,
+     "tx_errors": 0,
+     "tx_dropped": 0,
+     "interfaces": [
+      {
+       "name": "cali68dccee4986",
+       "rx_bytes": 4983852,
+       "rx_packets": 65473,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 4321304,
+       "tx_packets": 61959,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali765f326601c",
+       "rx_bytes": 223301145,
+       "rx_packets": 1277829,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 126897254,
+       "tx_packets": 1091395,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali2055b11269a",
+       "rx_bytes": 493036165,
+       "rx_packets": 3105357,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 682112990,
+       "tx_packets": 3241233,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "eth0",
+       "rx_bytes": 4620313131,
+       "rx_packets": 9877151,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 3036406772,
+       "tx_packets": 8292232,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali9de0255549b",
+       "rx_bytes": 360500047,
+       "rx_packets": 1374818,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 478181667,
+       "tx_packets": 1237761,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "tunl0",
+       "rx_bytes": 6179185,
+       "rx_packets": 26595,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 12611781,
+       "tx_packets": 40317,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      }
+     ],
+     "tcp": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "tcp6": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "udp": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     },
+     "udp6": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     }
+    },
+    "filesystem": [
+     {
+      "device": "tmpfs",
+      "type": "vfs",
+      "capacity": 4100268032,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 4100268032,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001026,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "/dev/xvda2",
+      "type": "vfs",
+      "capacity": 10724814848,
+      "usage": 3631292416,
+      "base_usage": 0,
+      "available": 7093522432,
+      "has_inodes": true,
+      "inodes": 5241840,
+      "inodes_free": 5207620,
+      "reads_completed": 11706,
+      "reads_merged": 1,
+      "sectors_read": 605048,
+      "read_time": 12936,
+      "writes_completed": 254077,
+      "writes_merged": 31218,
+      "sectors_written": 9635259,
+      "write_time": 1550213,
+      "io_in_progress": 0,
+      "io_time": 44483,
+      "weighted_io_time": 1563089
+     },
+     {
+      "device": "/dev/xvdb1",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771070976,
+      "base_usage": 0,
+      "available": 18692231168,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 463,
+      "reads_merged": 0,
+      "sectors_read": 24161,
+      "read_time": 464,
+      "writes_completed": 12393202,
+      "writes_merged": 416146,
+      "sectors_written": 145306459,
+      "write_time": 8031596,
+      "io_in_progress": 0,
+      "io_time": 3885843,
+      "weighted_io_time": 8022329
+     },
+     {
+      "device": "shm",
+      "type": "vfs",
+      "capacity": 67108864,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 67108864,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001041,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "overlay",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771070976,
+      "base_usage": 0,
+      "available": 18692231168,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     }
+    ],
+    "task_stats": {
+     "nr_sleeping": 0,
+     "nr_running": 0,
+     "nr_stopped": 0,
+     "nr_uninterruptible": 0,
+     "nr_io_wait": 0
+    }
+   },
+   {
+    "timestamp": "2018-09-24T15:15:22.852198601Z",
+    "cpu": {
+     "usage": {
+      "total": 284513071919304,
+      "user": 123583790000000,
+      "system": 91622920000000
+     },
+     "cfs": {
+      "periods": 0,
+      "throttled_periods": 0,
+      "throttled_time": 0
+     },
+     "schedstat": {
+      "run_time": 0,
+      "runqueue_time": 0,
+      "run_periods": 0
+     },
+     "load_average": 0
+    },
+    "diskio": {
+     "io_service_bytes": [
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 4722124288,
+        "Read": 295202816,
+        "Sync": 313906176,
+        "Total": 5036030464,
+        "Write": 4740827648
+       }
+      },
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 16161681408,
+        "Read": 25438720,
+        "Sync": 151026688,
+        "Total": 16312708096,
+        "Write": 16287269376
+       }
+      }
+     ],
+     "io_serviced": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 1275614,
+        "Read": 1099,
+        "Sync": 32438,
+        "Total": 1308052,
+        "Write": 1306953
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 235344,
+        "Read": 10292,
+        "Sync": 41216,
+        "Total": 276560,
+        "Write": 266268
+       }
+      }
+     ]
+    },
+    "memory": {
+     "usage": 7180750848,
+     "max_usage": 6104825856,
+     "cache": 1200701440,
+     "rss": 1645002752,
+     "swap": 0,
+     "working_set": 5347016704,
+     "failcnt": 0,
+     "container_data": {
+      "pgfault": 64374246,
+      "pgmajfault": 742
+     },
+     "hierarchical_data": {
+      "pgfault": 64374246,
+      "pgmajfault": 742
+     }
+    },
+    "network": {
+     "name": "cali68dccee4986",
+     "rx_bytes": 4983852,
+     "rx_packets": 65473,
+     "rx_errors": 0,
+     "rx_dropped": 0,
+     "tx_bytes": 4321304,
+     "tx_packets": 61959,
+     "tx_errors": 0,
+     "tx_dropped": 0,
+     "interfaces": [
+      {
+       "name": "cali68dccee4986",
+       "rx_bytes": 4983852,
+       "rx_packets": 65473,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 4321304,
+       "tx_packets": 61959,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali765f326601c",
+       "rx_bytes": 223304164,
+       "rx_packets": 1277842,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 126898368,
+       "tx_packets": 1091407,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali2055b11269a",
+       "rx_bytes": 493040935,
+       "rx_packets": 3105388,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 682120475,
+       "tx_packets": 3241264,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "eth0",
+       "rx_bytes": 4620343128,
+       "rx_packets": 9877269,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 3036441555,
+       "tx_packets": 8292343,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali9de0255549b",
+       "rx_bytes": 360505949,
+       "rx_packets": 1374828,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 478188503,
+       "tx_packets": 1237771,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "tunl0",
+       "rx_bytes": 6179268,
+       "rx_packets": 26596,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 12611920,
+       "tx_packets": 40319,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      }
+     ],
+     "tcp": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "tcp6": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "udp": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     },
+     "udp6": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     }
+    },
+    "filesystem": [
+     {
+      "device": "overlay",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771070976,
+      "base_usage": 0,
+      "available": 18692231168,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "tmpfs",
+      "type": "vfs",
+      "capacity": 4100268032,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 4100268032,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001026,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "/dev/xvda2",
+      "type": "vfs",
+      "capacity": 10724814848,
+      "usage": 3631292416,
+      "base_usage": 0,
+      "available": 7093522432,
+      "has_inodes": true,
+      "inodes": 5241840,
+      "inodes_free": 5207620,
+      "reads_completed": 11706,
+      "reads_merged": 1,
+      "sectors_read": 605048,
+      "read_time": 12936,
+      "writes_completed": 254079,
+      "writes_merged": 31218,
+      "sectors_written": 9635271,
+      "write_time": 1550214,
+      "io_in_progress": 0,
+      "io_time": 44484,
+      "weighted_io_time": 1563090
+     },
+     {
+      "device": "/dev/xvdb1",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771070976,
+      "base_usage": 0,
+      "available": 18692231168,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 463,
+      "reads_merged": 0,
+      "sectors_read": 24161,
+      "read_time": 464,
+      "writes_completed": 12393362,
+      "writes_merged": 416146,
+      "sectors_written": 145308170,
+      "write_time": 8031662,
+      "io_in_progress": 0,
+      "io_time": 3885896,
+      "weighted_io_time": 8022395
+     },
+     {
+      "device": "shm",
+      "type": "vfs",
+      "capacity": 67108864,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 67108864,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001041,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     }
+    ],
+    "task_stats": {
+     "nr_sleeping": 0,
+     "nr_running": 0,
+     "nr_stopped": 0,
+     "nr_uninterruptible": 0,
+     "nr_io_wait": 0
+    }
+   },
+   {
+    "timestamp": "2018-09-24T15:15:32.883321303Z",
+    "cpu": {
+     "usage": {
+      "total": 284516090735598,
+      "user": 123584930000000,
+      "system": 91623910000000
+     },
+     "cfs": {
+      "periods": 0,
+      "throttled_periods": 0,
+      "throttled_time": 0
+     },
+     "schedstat": {
+      "run_time": 0,
+      "runqueue_time": 0,
+      "run_periods": 0
+     },
+     "load_average": 0
+    },
+    "diskio": {
+     "io_service_bytes": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 16162356736,
+        "Read": 25438720,
+        "Sync": 151026688,
+        "Total": 16313383424,
+        "Write": 16287944704
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 4722132480,
+        "Read": 295202816,
+        "Sync": 313906176,
+        "Total": 5036038656,
+        "Write": 4740835840
+       }
+      }
+     ],
+     "io_serviced": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 1275672,
+        "Read": 1099,
+        "Sync": 32438,
+        "Total": 1308110,
+        "Write": 1307011
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 235345,
+        "Read": 10292,
+        "Sync": 41216,
+        "Total": 276561,
+        "Write": 266269
+       }
+      }
+     ]
+    },
+    "memory": {
+     "usage": 7178309632,
+     "max_usage": 6104825856,
+     "cache": 1200701440,
+     "rss": 1642999808,
+     "swap": 0,
+     "working_set": 5344575488,
+     "failcnt": 0,
+     "container_data": {
+      "pgfault": 64374684,
+      "pgmajfault": 742
+     },
+     "hierarchical_data": {
+      "pgfault": 64374684,
+      "pgmajfault": 742
+     }
+    },
+    "network": {
+     "name": "cali68dccee4986",
+     "rx_bytes": 4983852,
+     "rx_packets": 65473,
+     "rx_errors": 0,
+     "rx_dropped": 0,
+     "tx_bytes": 4321304,
+     "tx_packets": 61959,
+     "tx_errors": 0,
+     "tx_dropped": 0,
+     "interfaces": [
+      {
+       "name": "cali68dccee4986",
+       "rx_bytes": 4983852,
+       "rx_packets": 65473,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 4321304,
+       "tx_packets": 61959,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali765f326601c",
+       "rx_bytes": 223304586,
+       "rx_packets": 1277847,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 126898658,
+       "tx_packets": 1091410,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali2055b11269a",
+       "rx_bytes": 493048404,
+       "rx_packets": 3105435,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 682130030,
+       "tx_packets": 3241311,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "eth0",
+       "rx_bytes": 4620375735,
+       "rx_packets": 9877383,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 3036483053,
+       "tx_packets": 8292453,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali9de0255549b",
+       "rx_bytes": 360509794,
+       "rx_packets": 1374849,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 478192674,
+       "tx_packets": 1237789,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "tunl0",
+       "rx_bytes": 6179268,
+       "rx_packets": 26596,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 12611920,
+       "tx_packets": 40319,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      }
+     ],
+     "tcp": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "tcp6": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "udp": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     },
+     "udp6": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     }
+    },
+    "filesystem": [
+     {
+      "device": "overlay",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771070976,
+      "base_usage": 0,
+      "available": 18692231168,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "tmpfs",
+      "type": "vfs",
+      "capacity": 4100268032,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 4100268032,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001026,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "/dev/xvda2",
+      "type": "vfs",
+      "capacity": 10724814848,
+      "usage": 3631292416,
+      "base_usage": 0,
+      "available": 7093522432,
+      "has_inodes": true,
+      "inodes": 5241840,
+      "inodes_free": 5207620,
+      "reads_completed": 11706,
+      "reads_merged": 1,
+      "sectors_read": 605048,
+      "read_time": 12936,
+      "writes_completed": 254080,
+      "writes_merged": 31218,
+      "sectors_written": 9635287,
+      "write_time": 1550214,
+      "io_in_progress": 0,
+      "io_time": 44484,
+      "weighted_io_time": 1563090
+     },
+     {
+      "device": "/dev/xvdb1",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771070976,
+      "base_usage": 0,
+      "available": 18692231168,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 463,
+      "reads_merged": 0,
+      "sectors_read": 24161,
+      "read_time": 464,
+      "writes_completed": 12393527,
+      "writes_merged": 416167,
+      "sectors_written": 145310786,
+      "write_time": 8031774,
+      "io_in_progress": 0,
+      "io_time": 3885945,
+      "weighted_io_time": 8022507
+     },
+     {
+      "device": "shm",
+      "type": "vfs",
+      "capacity": 67108864,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 67108864,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001041,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     }
+    ],
+    "task_stats": {
+     "nr_sleeping": 0,
+     "nr_running": 0,
+     "nr_stopped": 0,
+     "nr_uninterruptible": 0,
+     "nr_io_wait": 0
+    }
+   },
+   {
+    "timestamp": "2018-09-24T15:15:42.911512693Z",
+    "cpu": {
+     "usage": {
+      "total": 284519480873764,
+      "user": 123586340000000,
+      "system": 91625010000000
+     },
+     "cfs": {
+      "periods": 0,
+      "throttled_periods": 0,
+      "throttled_time": 0
+     },
+     "schedstat": {
+      "run_time": 0,
+      "runqueue_time": 0,
+      "run_periods": 0
+     },
+     "load_average": 0
+    },
+    "diskio": {
+     "io_service_bytes": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 16162356736,
+        "Read": 25438720,
+        "Sync": 151026688,
+        "Total": 16313383424,
+        "Write": 16287944704
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 4722157056,
+        "Read": 295202816,
+        "Sync": 313906176,
+        "Total": 5036063232,
+        "Write": 4740860416
+       }
+      }
+     ],
+     "io_serviced": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 1275672,
+        "Read": 1099,
+        "Sync": 32438,
+        "Total": 1308110,
+        "Write": 1307011
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 235346,
+        "Read": 10292,
+        "Sync": 41216,
+        "Total": 276562,
+        "Write": 266270
+       }
+      }
+     ]
+    },
+    "memory": {
+     "usage": 7177908224,
+     "max_usage": 6104825856,
+     "cache": 1200701440,
+     "rss": 1642573824,
+     "swap": 0,
+     "working_set": 5344174080,
+     "failcnt": 0,
+     "container_data": {
+      "pgfault": 64375075,
+      "pgmajfault": 742
+     },
+     "hierarchical_data": {
+      "pgfault": 64375075,
+      "pgmajfault": 742
+     }
+    },
+    "network": {
+     "name": "cali68dccee4986",
+     "rx_bytes": 4984160,
+     "rx_packets": 65476,
+     "rx_errors": 0,
+     "rx_dropped": 0,
+     "tx_bytes": 4321604,
+     "tx_packets": 61962,
+     "tx_errors": 0,
+     "tx_dropped": 0,
+     "interfaces": [
+      {
+       "name": "cali68dccee4986",
+       "rx_bytes": 4984160,
+       "rx_packets": 65476,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 4321604,
+       "tx_packets": 61962,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali765f326601c",
+       "rx_bytes": 223309063,
+       "rx_packets": 1277871,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 126901675,
+       "tx_packets": 1091430,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali2055b11269a",
+       "rx_bytes": 493055453,
+       "rx_packets": 3105480,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 682139215,
+       "tx_packets": 3241356,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "eth0",
+       "rx_bytes": 4620395729,
+       "rx_packets": 9877462,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 3036511857,
+       "tx_packets": 8292528,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali9de0255549b",
+       "rx_bytes": 360514064,
+       "rx_packets": 1374873,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 478206291,
+       "tx_packets": 1237810,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "tunl0",
+       "rx_bytes": 6179268,
+       "rx_packets": 26596,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 12611920,
+       "tx_packets": 40319,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      }
+     ],
+     "tcp": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "tcp6": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "udp": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     },
+     "udp6": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     }
+    },
+    "filesystem": [
+     {
+      "device": "/dev/xvda2",
+      "type": "vfs",
+      "capacity": 10724814848,
+      "usage": 3631292416,
+      "base_usage": 0,
+      "available": 7093522432,
+      "has_inodes": true,
+      "inodes": 5241840,
+      "inodes_free": 5207620,
+      "reads_completed": 11706,
+      "reads_merged": 1,
+      "sectors_read": 605048,
+      "read_time": 12936,
+      "writes_completed": 254081,
+      "writes_merged": 31218,
+      "sectors_written": 9635335,
+      "write_time": 1550214,
+      "io_in_progress": 0,
+      "io_time": 44484,
+      "weighted_io_time": 1563090
+     },
+     {
+      "device": "/dev/xvdb1",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771070976,
+      "base_usage": 0,
+      "available": 18692231168,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 463,
+      "reads_merged": 0,
+      "sectors_read": 24161,
+      "read_time": 464,
+      "writes_completed": 12393663,
+      "writes_merged": 416167,
+      "sectors_written": 145312039,
+      "write_time": 8031844,
+      "io_in_progress": 0,
+      "io_time": 3885989,
+      "weighted_io_time": 8022577
+     },
+     {
+      "device": "shm",
+      "type": "vfs",
+      "capacity": 67108864,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 67108864,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001041,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "overlay",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771070976,
+      "base_usage": 0,
+      "available": 18692231168,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457751,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "tmpfs",
+      "type": "vfs",
+      "capacity": 4100268032,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 4100268032,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001026,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     }
+    ],
+    "task_stats": {
+     "nr_sleeping": 0,
+     "nr_running": 0,
+     "nr_stopped": 0,
+     "nr_uninterruptible": 0,
+     "nr_io_wait": 0
+    }
+   },
+   {
+    "timestamp": "2018-09-24T15:15:52.938800816Z",
+    "cpu": {
+     "usage": {
+      "total": 284523520444723,
+      "user": 123588080000000,
+      "system": 91626440000000
+     },
+     "cfs": {
+      "periods": 0,
+      "throttled_periods": 0,
+      "throttled_time": 0
+     },
+     "schedstat": {
+      "run_time": 0,
+      "runqueue_time": 0,
+      "run_periods": 0
+     },
+     "load_average": 0
+    },
+    "diskio": {
+     "io_service_bytes": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 16162360832,
+        "Read": 25438720,
+        "Sync": 151026688,
+        "Total": 16313387520,
+        "Write": 16287948800
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 4722173440,
+        "Read": 295202816,
+        "Sync": 313910272,
+        "Total": 5036083712,
+        "Write": 4740880896
+       }
+      }
+     ],
+     "io_serviced": [
+      {
+       "device": "/dev/xvdb",
+       "major": 202,
+       "minor": 16,
+       "stats": {
+        "Async": 1275673,
+        "Read": 1099,
+        "Sync": 32438,
+        "Total": 1308111,
+        "Write": 1307012
+       }
+      },
+      {
+       "device": "/dev/xvda",
+       "major": 202,
+       "minor": 0,
+       "stats": {
+        "Async": 235347,
+        "Read": 10292,
+        "Sync": 41217,
+        "Total": 276564,
+        "Write": 266272
+       }
+      }
+     ]
+    },
+    "memory": {
+     "usage": 7189487616,
+     "max_usage": 6104825856,
+     "cache": 1200701440,
+     "rss": 1654063104,
+     "swap": 0,
+     "working_set": 5355741184,
+     "failcnt": 0,
+     "container_data": {
+      "pgfault": 64375894,
+      "pgmajfault": 742
+     },
+     "hierarchical_data": {
+      "pgfault": 64375894,
+      "pgmajfault": 742
+     }
+    },
+    "network": {
+     "name": "cali68dccee4986",
+     "rx_bytes": 4984160,
+     "rx_packets": 65476,
+     "rx_errors": 0,
+     "rx_dropped": 0,
+     "tx_bytes": 4321604,
+     "tx_packets": 61962,
+     "tx_errors": 0,
+     "tx_dropped": 0,
+     "interfaces": [
+      {
+       "name": "cali68dccee4986",
+       "rx_bytes": 4984160,
+       "rx_packets": 65476,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 4321604,
+       "tx_packets": 61962,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali765f326601c",
+       "rx_bytes": 223313645,
+       "rx_packets": 1277898,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 126904442,
+       "tx_packets": 1091454,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali2055b11269a",
+       "rx_bytes": 493060230,
+       "rx_packets": 3105511,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 682146700,
+       "tx_packets": 3241387,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "eth0",
+       "rx_bytes": 4620494010,
+       "rx_packets": 9877619,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 3036546570,
+       "tx_packets": 8292642,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "cali9de0255549b",
+       "rx_bytes": 360519473,
+       "rx_packets": 1374879,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 478206816,
+       "tx_packets": 1237816,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      },
+      {
+       "name": "tunl0",
+       "rx_bytes": 6179268,
+       "rx_packets": 26596,
+       "rx_errors": 0,
+       "rx_dropped": 0,
+       "tx_bytes": 12611920,
+       "tx_packets": 40319,
+       "tx_errors": 0,
+       "tx_dropped": 0
+      }
+     ],
+     "tcp": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "tcp6": {
+      "Established": 0,
+      "SynSent": 0,
+      "SynRecv": 0,
+      "FinWait1": 0,
+      "FinWait2": 0,
+      "TimeWait": 0,
+      "Close": 0,
+      "CloseWait": 0,
+      "LastAck": 0,
+      "Listen": 0,
+      "Closing": 0
+     },
+     "udp": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     },
+     "udp6": {
+      "Listen": 0,
+      "Dropped": 0,
+      "RxQueued": 0,
+      "TxQueued": 0
+     }
+    },
+    "filesystem": [
+     {
+      "device": "tmpfs",
+      "type": "vfs",
+      "capacity": 4100268032,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 4100268032,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001026,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "/dev/xvda2",
+      "type": "vfs",
+      "capacity": 10724814848,
+      "usage": 3631292416,
+      "base_usage": 0,
+      "available": 7093522432,
+      "has_inodes": true,
+      "inodes": 5241840,
+      "inodes_free": 5207620,
+      "reads_completed": 11706,
+      "reads_merged": 1,
+      "sectors_read": 605048,
+      "read_time": 12936,
+      "writes_completed": 254083,
+      "writes_merged": 31218,
+      "sectors_written": 9635375,
+      "write_time": 1550214,
+      "io_in_progress": 0,
+      "io_time": 44484,
+      "weighted_io_time": 1563090
+     },
+     {
+      "device": "/dev/xvdb1",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771365888,
+      "base_usage": 0,
+      "available": 18691936256,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457737,
+      "reads_completed": 463,
+      "reads_merged": 0,
+      "sectors_read": 24161,
+      "read_time": 464,
+      "writes_completed": 12393832,
+      "writes_merged": 416167,
+      "sectors_written": 145313674,
+      "write_time": 8031921,
+      "io_in_progress": 0,
+      "io_time": 3886049,
+      "weighted_io_time": 8022654
+     },
+     {
+      "device": "shm",
+      "type": "vfs",
+      "capacity": 67108864,
+      "usage": 0,
+      "base_usage": 0,
+      "available": 67108864,
+      "has_inodes": true,
+      "inodes": 1001042,
+      "inodes_free": 1001041,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     },
+     {
+      "device": "overlay",
+      "type": "vfs",
+      "capacity": 21463302144,
+      "usage": 2771365888,
+      "base_usage": 0,
+      "available": 18691936256,
+      "has_inodes": true,
+      "inodes": 10485248,
+      "inodes_free": 10457737,
+      "reads_completed": 0,
+      "reads_merged": 0,
+      "sectors_read": 0,
+      "read_time": 0,
+      "writes_completed": 0,
+      "writes_merged": 0,
+      "sectors_written": 0,
+      "write_time": 0,
+      "io_in_progress": 0,
+      "io_time": 0,
+      "weighted_io_time": 0
+     }
+    ],
+    "task_stats": {
+     "nr_sleeping": 0,
+     "nr_running": 0,
+     "nr_stopped": 0,
+     "nr_uninterruptible": 0,
+     "nr_io_wait": 0
+    }
+   }
+  ]
+ }
