@@ -26,21 +26,24 @@ spec:
       # Because DNS doesn't work in my env I manually define hosts here. 
       # you probably don't need this bit....
       hostAliases:
-      - ip: "172.31.13.181"
+      - ip: "172.31.7.143"
         hostnames:
-        - "manager-01.local"
-      - ip: "172.31.1.128"
+        - "controller0.local"
+      - ip: "172.31.14.137"
         hostnames:
-        - "worker-01.local"
-      - ip: "172.31.8.8"
+        - "dtr0.local"
+      - ip: "172.31.47.18"
         hostnames:
-        - "dtr-01.local"
+        - "worker0.local"
+      - ip: "172.31.42.23"
+        hostnames:
+        - "worker1.local"
       volumes:
       - name: tmp-dir
         emptyDir: {}
       containers:
       - name: metrics-server
-        image: gcr.io/google_containers/metrics-server-amd64:v0.3.0
+        image: gcr.io/google_containers/metrics-server-amd64:v0.3.1
         imagePullPolicy: Always
         command:
         - /metrics-server
