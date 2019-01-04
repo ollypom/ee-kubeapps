@@ -2,8 +2,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: localvolume
-  namespace: default
+  name: createpvs
 rules:
 - apiGroups:
   - ""
@@ -15,17 +14,16 @@ rules:
   - create
   - delete
   - watch
-    #---
-    #kind: RoleBinding
-    #apiVersion: rbac.authorization.k8s.io/v1
-    #metadata:
-    #  name: localvolume
-    #  namespace: default
-    #roleRef:
-    #  kind: Role
-    #  name: localvolume
-    #  apiGroup: rbac.authorization.k8s.io
-    #subjects:
-    #- kind: ServiceAccount
-    #  name: fluentd
-    #  namespace: monitoring
+  - patch
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: jeff:createpvs
+roleRef:
+  kind: ClusterRole
+  name: createpvs
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: User
+  name: jeff

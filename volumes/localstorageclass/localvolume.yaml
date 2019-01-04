@@ -10,7 +10,7 @@ spec:
   persistentVolumeReclaimPolicy: Recycle
   storageClassName: local-storage
   local:
-    path: /var/lib/kubelet
+    path: /mnt/data
   nodeAffinity:
     required:
       nodeSelectorTerms:

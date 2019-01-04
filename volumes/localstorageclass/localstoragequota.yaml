@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: local-storage-quota
+  namespace: default
+spec:
+  hard:
+    local-storage.storageclass.storage.k8s.io/persistentvolumeclaims: 0

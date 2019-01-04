@@ -6,6 +6,8 @@ spec:
   containers:
     - name:  demo
       image: alpine
+      securityContext:
+        runAsUser: 1000
       command:
       - sleep
       - "50000"

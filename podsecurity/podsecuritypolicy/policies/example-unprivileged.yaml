@@ -16,4 +16,8 @@ spec:
   fsGroup:
     rule: RunAsAny
   volumes:
-  - '*'
+  - configMap
+  - emptyDir
+  - secret
+  - hostPath
+  - persistentVolumeClaim
