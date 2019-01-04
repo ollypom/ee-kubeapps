@@ -1,24 +1,19 @@
 apiVersion: extensions/v1beta1
 kind: PodSecurityPolicy
 metadata:
-  name: admin-psp-policy
+  name: unprivileged
   annotations:
     seccomp.security.alpha.kubernetes.io/allowedProfileNames: 'docker/default'
     seccomp.security.alpha.kubernetes.io/defaultProfileName:  'docker/default'
 spec:
-  privileged: True  
+  privileged: False 
   seLinux:
     rule: RunAsAny
   supplementalGroups:
     rule: RunAsAny
   runAsUser:
-    rule: RunAsAny
+    rule: MustRunAsNonRoot
   fsGroup:
     rule: RunAsAny
   volumes:
   - '*'
-  hostPID: true
-  hostNetwork: true
-  hostPorts:
-  - min: 1
-    max: 65536

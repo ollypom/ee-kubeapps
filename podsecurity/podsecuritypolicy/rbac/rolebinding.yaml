@@ -1,7 +1,8 @@
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: psp:privileged:admin
+  name: psp:privileged:default:admin
+  namespace: default
 roleRef:
   kind: ClusterRole
   name: psp:privileged
@@ -14,7 +15,50 @@ subjects:
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: psp:unprivileged:user
+  name: psp:privileged:kubesystem:admin
+  namespace: kube-system
+roleRef:
+  kind: ClusterRole
+  name: psp:privileged
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: User
+  name: kubeadm-admin
+  namespace: kube-system
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: psp:privileged:kubesystem:sa
+  namespace: kube-system
+roleRef:
+  kind: ClusterRole
+  name: psp:privileged
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: kube-system
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: psp:privileged:kubesystem:coredns
+  namespace: kube-system
+roleRef:
+  kind: ClusterRole
+  name: psp:privileged
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: ServiceAccount
+  name: coredns
+  namespace: kube-system
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: psp:unprivileged:default:jeff
+  namespace: default
 roleRef:
   kind: ClusterRole
   name: psp:unprivileged
@@ -27,7 +71,8 @@ subjects:
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: psp:unprivileged:sa
+  name: psp:unprivileged:default:sa
+  namespace: default
 roleRef:
   kind: ClusterRole
   name: psp:unprivileged
