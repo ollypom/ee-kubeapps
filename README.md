@@ -1,5 +1,3 @@
-# Guides for Stuff during the Docker EE2 Beta
+# Guides for running stuff on Docker EE 2.0 or newer
 
-Stuff in here might work, it might not, it will constantly be changing as we
-learn more kube :) 
-
+Stuff in here might work, it might not... 
