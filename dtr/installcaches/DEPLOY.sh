@@ -26,7 +26,13 @@ curl -X POST "https://dtr.olly.dtcntr.net/api/v0/content_caches" -H "accept: app
 
 # Create a Registry Secret for Jeff in Kube
 
-kubectl create secret docker-registry dtrcreds --docker-server=dtr.olly.dtcntr.net --docker-username=jeff --docker-password=docker123 --docker-email=jeff@fake.com
+REG='dtr.example.com'
+REGUSER=jeff
+REGPASS=password
+REGMAIL='jeff@example.com'
 
-
-
+kubectl create secret docker-registry dtrcreds 
+    --docker-server=$REG \
+    --docker-username=$REGUSER \
+    --docker-password=$REGPASS \
+    --docker-email=$REGMAIL
