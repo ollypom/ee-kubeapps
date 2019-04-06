@@ -1,0 +1,24 @@
+version: 0.1
+log:
+  level: info
+storage:
+  delete:
+    enabled: true
+  filesystem:
+    rootdirectory: /var/lib/registry
+http:
+  addr: 0.0.0.0:443
+  secret: generate-random-secret
+  host: https://dtr-cache.dtr.svc.cluster.local
+  tls:
+    certificate: /certs/cache.cert.pem
+    key: /certs/cache.key.pem
+middleware:
+  registry:
+      - name: downstream
+        options:
+          blobttl: 24h
+          upstreams:
+            - https://dtr.olly.dtcntr.net
+          cas:
+            - /certs/dtr.cert.pem

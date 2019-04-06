@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cachetest
+spec:
+  containers:
+  - name: cachetest
+    image: 'dtr.olly.dtcntr.net/demoorg/cachetest:1'
+    imagePullPolicy: Always
+  imagePullSecrets:
+    - name: dtrcreds

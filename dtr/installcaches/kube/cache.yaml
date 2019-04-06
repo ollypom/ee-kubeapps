@@ -1,0 +1,42 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: dtr-cache
+  namespace: dtr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dtr-cache
+  template:
+    metadata:
+      labels:
+        app: dtr-cache
+      annotations:
+       seccomp.security.alpha.kubernetes.io/pod: docker/default
+    spec:
+      containers:
+        - name: dtr-cache
+          image: docker/dtr-content-cache:2.5.4
+          command: ["bin/sh"]
+          args: 
+            - start.sh
+            - /config/config.yml
+          ports:
+          - name: https
+            containerPort: 443
+          volumeMounts:
+          - name: dtr-certs
+            readOnly: true
+            mountPath: /certs/
+          - name: dtr-cache-config
+            readOnly: true
+            mountPath: /config
+      volumes:
+      - name: dtr-certs
+        secret:
+          secretName: dtr-certs
+      - name: dtr-cache-config
+        configMap:
+          defaultMode: 0666
+          name: dtr-cache-config
