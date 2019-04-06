@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: anchore
+  name: anchore-engine
+  namespace: anchore
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anchore
+  template:
+    metadata:
+      labels:
+        app: anchore
+    spec:
+      containers:
+        - name: anchore-engine
+          image: docker.io/anchore/anchore-engine:v0.3.4
+          ports:
+            - containerPort: 8228
+            - containerPort: 8338
+          env:
+          - name: ANCHORE_DB_HOST
+            value: anchore-engine-db
+          - name: ANCHORE_DB_USER
+            value: postgres
+          - name: ANCHORE_DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: anchore-engine-db-creds
+                key: db_password
+          - name: ANCHORE_ADMIN_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: anchore-engine-user-creds
+                key: admin_password
+          - name: ANCHORE_ENDPOINT_HOSTNAME
+            value: localhost
+          - name: ANCHORE_HOST_ID
+            value: dockerhostid-anchore-engine      
+          volumeMounts:
+          - name: config-volume
+            mountPath: /config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: anchore-engine-config

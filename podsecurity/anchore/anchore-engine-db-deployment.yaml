@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: anchore-engine-db
+  name: anchore-engine-db
+  namespace: anchore
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anchore-engine-db
+  template:
+    metadata:
+      labels:
+        app: anchore-engine-db
+    spec:
+      containers:
+        - name: postgres
+          image: 'postgres:11.2'
+          ports:
+            - containerPort: 5432
+          env:
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: anchore-engine-db-creds
+                key: db_password
+          volumeMounts:
+            - mountPath: "/var/lib/postgresql"
+              name: postgresdata
+      volumes:
+      - name: postgresdata
+        persistentVolumeClaim:
+         claimName: anchore-engine-db-data

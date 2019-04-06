@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: anchore-cli
+spec:
+  containers:
+    - name:  anchore-cli
+      image: anchore/engine-cli:v0.3.4
+      command:
+        - sleep
+        - "500000"
+      env:
+      - name: ANCHORE_CLI_PASS
+        valueFrom:
+          secretKeyRef:
+            name: anchore-engine-user-creds
+            key: admin_password
+      - name: ANCHORE_CLI_USER 
+        value: admin
+      - name: ANCHORE_CLI_URL 
+        value: 'http://anchore-engine/v1/'

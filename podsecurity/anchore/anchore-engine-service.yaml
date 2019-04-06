@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: anchore-engine
+  labels:
+    app: anchore
+spec:
+  ports:
+    - port: 80
+      targetPort: 8228
+      protocol: TCP
+      name: anchore-api
+    - port: 8338
+      targetPort: 8338
+      protocol: TCP
+      name: anchore-k8s-webhook
+  selector:
+    app: anchore
