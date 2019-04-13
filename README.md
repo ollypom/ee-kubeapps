@@ -1,3 +1,3 @@
-# Guides for running stuff on Docker EE 2.0 or newer
+# Guides for running stuff on Kubernetes on Docker Enterprise
 
 Stuff in here might work, it might not...
