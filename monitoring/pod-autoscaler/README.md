@@ -1,15 +1,11 @@
-# Horizontal Pod Autoscaler 
+# Using Horizontal Pod Autoscaler on UCP
 
-This is currently dead in UCP 3.0.x. We do not have access to heapster or the
-/metrics API in anyway....
+A pre-req for using HPAs on Docker Enterprise UCP is to have a metrics-server
+running. We do support using heapster here (as heapster is depreciated in HPA in
+1.11).
 
-WORKERS ON UCP 3.1!! 
-
-The only pre-req is to depoy the metrics-server. Docs on how to install
- on UCP 3.1 are here: [here](./../metrics-server)
+Docs to deploy metrics-server are [here](./../metrics-server)
 
 The demo here is based off of: 
 
 https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
-
-
