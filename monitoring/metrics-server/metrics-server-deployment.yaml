@@ -38,6 +38,9 @@ spec:
       - ip: "172.31.42.23"
         hostnames:
         - "worker1.local"
+      - ip: "172.31.10.177"
+        hostnames:
+        - "worker2.local"
       volumes:
       - name: tmp-dir
         emptyDir: {}
