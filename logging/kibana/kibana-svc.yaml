@@ -10,7 +10,8 @@ spec:
   ports:
   - name: http
     port: 80
-    targetPort: http
+    targetPort: 5601
+    protocol: TCP
 ---
 # Create the ingress resource
 apiVersion: extensions/v1beta1
