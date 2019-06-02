@@ -1,7 +1,7 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: curator
+  name: curator2
   namespace: monitoring
 spec:
   schedule: 1 0 * * *
@@ -26,5 +26,5 @@ spec:
           volumes:
             - name: config-volume
               configMap:
-                name: curator-config
+                name: curator2-config
           restartPolicy: OnFailure
