@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: elasticsearch
+  name: elasticsearch
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: elasticsearch
+  serviceName: elasticsearch
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+    spec:
+      containers:
+      - env:
+        - name: cluster.name
+          value: k8s-logs
+        - name: node.name
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: discovery.zen.ping.unicast.hosts
+          value: elasticsearch
+        - name: discovery.zen.minimum_master_nodes
+          value: "2"
+        - name: node.max_local_storage_nodes
+          value: "3"
+        - name: ES_JAVA_OPTS
+          value: -Xms512m -Xmx512m
+        image: elasticsearch:6.8.0
+        name: elasticsearch
+        ports:
+        - containerPort: 9200
+          name: api
+          protocol: TCP
+        - containerPort: 9300
+          name: inter-node
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: data
+        - mountPath: /usr/share/statefulset/data
+          name: data
+      initContainers:
+      - command:
+        - sh
+        - -c
+        - chown -R 1000:1000 /usr/share/elasticsearch/data
+        image: busybox
+        name: fix-permissions
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: data
+      - command:
+        - sysctl
+        - -w
+        - vm.max_map_count=262144
+        image: busybox
+        name: increase-vm-max-map
+        securityContext:
+          privileged: true
+      - command:
+        - sh
+        - -c
+        - ulimit -n 65536
+        image: busybox
+        name: increase-fd-ulimit
+        securityContext:
+          privileged: true
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: elasticsearch

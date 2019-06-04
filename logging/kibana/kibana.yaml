@@ -15,11 +15,14 @@ spec:
       labels:
         app: kibana
       annotations:
-       seccomp.security.alpha.kubernetes.io/pod: docker/default
+        seccomp.security.alpha.kubernetes.io/pod: docker/default
     spec:
       containers:
       - name: kibana
         image: docker.elastic.co/kibana/kibana:7.1.1
+        env:
+        - name: CLUSTER_NAME
+          value: elasticsearch-cluster
         resources:
           limits:
             cpu: 1000m
