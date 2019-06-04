@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: journalbeat
@@ -17,11 +17,16 @@ spec:
        seccomp.security.alpha.kubernetes.io/pod: docker/default
     spec:
       terminationGracePeriodSeconds: 30
+      serviceAccountName: journalbeat
       securityContext:
         runAsUser: 0
       containers:
       - name: journalbeat
         image: docker.elastic.co/beats/journalbeat:7.1.1
+        args:
+          - "-e"
+          - "-c"
+          - "/usr/share/journalbeat/config/journalbeat.yaml"
         resources:
           requests:
             cpu: 50m
@@ -29,9 +34,6 @@ spec:
           limits:
             cpu: 50m
             memory: 250Mi
-        env:
-          - name: output.elasticsearch.hosts
-            value: '["elasticsearch:9200"]'
         volumeMounts:
         - name: varlog
           mountPath: '/var/log/journal'
@@ -41,6 +43,9 @@ spec:
           mountPath: '/etc/machine-id'
         - name: hostname
           mountPath: '/etc/hostname'
+          readOnly: true
+        - name: config
+          mountPath: '/usr/share/journalbeat/config'
           readOnly: true
       volumes:
       - name: varlog
@@ -55,3 +60,6 @@ spec:
       - name: hostname
         hostPath:
           path: '/etc/hostname'
+      - name: config
+        configMap:
+          name: journalbeat-config
