@@ -15,7 +15,16 @@ data:
         Match               kube.*
         Kube_URL            https://kubernetes.default.svc:443
         K8S-Logging.Parser  On
+        K8S-Logging.exclude True
         Merge_Log           On
+    [FILTER]
+        Name                kubernetes
+        Match               host.*
+        Kube_URL            https://kubernetes.default.svc:443
+        Merge_Log           On
+        K8S-Logging.Parser  On
+        K8S-Logging.exclude True
+        Use_Journal         On
   fluent-bit.conf: |-
     [SERVICE]
         Flush         1
@@ -29,26 +38,22 @@ data:
     @INCLUDE input-kubernetes.conf
     @INCLUDE filter-kubernetes.conf
     @INCLUDE output-fluentd.conf
-  input-docker.conf: |-
-    [INPUT]
-        Name              tail
-        Tag               docker.*
-        Path              /var/lib/docker/containers/*/*.log
-        Parser            docker
-        DB                /var/log/flb_docker.db
-        Mem_Buf_Limit     5MB
-        Skip_Long_Lines   Off
-        Refresh_Interval  10
   input-kubernetes.conf: |-
     [INPUT]
         Name              tail
         Tag               kube.*
-        Path              /var/log/containers/*.log
+        Exclude_Path      /var/log/containers/*kube-system*
+        Path              /var/log/containers/*default*.log
         Parser            docker
         DB                /var/log/flb_kube.db
         Mem_Buf_Limit     5MB
-        Skip_Long_Lines   Off
+        Skip_Long_Lines   On
         Refresh_Interval  10
+    [INPUT]
+        Name              systemd
+        Tag               host.*
+        Systemd_Filter    _SYSTEMD_UNIT=docker.service
+        Path              /var/log/journal
   output-fluentd.conf: |-
     [OUTPUT]
         Name                forward
@@ -93,10 +98,9 @@ data:
         Time_Key    time
         Time_Format %Y-%m-%dT%H:%M:%S.%L
         Time_Keep   Off
-        # Command      |  Decoder | Field | Optional Action
-        # =============|==================|=================
-        Decode_Field_As   escaped    log   do_next
-        Decode_Field_As   json       log
+        # Command      |  Decoder       | Field | Optional Action
+        # =============|================|=======|================
+        Decode_Field_As   escaped_utf8    log
     [PARSER]
         Name        syslog
         Format      regex
