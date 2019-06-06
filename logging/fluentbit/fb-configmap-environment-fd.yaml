@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  FORWARDER_HOST: fluentd
+  FORWARDER_PORT: "24224"
+kind: ConfigMap
+metadata:
+  annotations:
+    prometheus.io/path: /api/v1/metrics/prometheus
+    prometheus.io/port: "2020"
+    prometheus.io/scrape: "true"
+  labels:
+    app: fluent-bit
+  name: fluent-bit-environment-fd

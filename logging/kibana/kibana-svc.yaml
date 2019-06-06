@@ -18,14 +18,14 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: kibana
-  namespace: monitoring
+  namespace: logging
   annotations:
     nginx.ingress.kubernetes.io/auth-type: basic
     nginx.ingress.kubernetes.io/auth-secret: basic-auth
     nginx.ingress.kubernetes.io/auth-realm: "Authentication Required - Sorry"
 spec:
   rules:
-  - host: kibana.apps.olly.dtcntr.net
+  - host: kibana-30052019a.srichards.dci-demo.azure.docker-ee.com
     http:
       paths:
       - path: /

@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+   app: fluentd
+  name: fluentd-config
+data:
+  fluent.conf: |-
+    <system>
+      root_dir /tmp/fluentd-buffers/
+    </system>
+
+    <source>
+      @id     forward
+      @type   forward
+    </source>
+
+    <match fluent.**>
+      @type null
+    </match>
+
+    <match **.**>
+        @type elasticsearch
+        host "#{ENV['FLUENT_ELASTICSEARCH_HOST']}"
+        port "#{ENV['FLUENT_ELASTICSEARCH_PORT']}"
+        user "#{ENV['FLUENT_ELASTICSEARCH_USER']}" # remove these lines if not needed
+        password "#{ENV['FLUENT_ELASTICSEARCH_PASSWORD']}" # remove these lines if not needed
+        scheme http
+        logstash_prefix logstash
+        logstash_format true
+        include_tag_key true
+    </match>
