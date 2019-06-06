@@ -42,10 +42,10 @@ data:
     [INPUT]
         Name              tail
         Tag               kube.*
-        Exclude_Path      /var/log/containers/*kube-system*
+        Exclude_Path      var/log/containers/*kube-system*
         Path              /var/log/containers/*default*.log
         Parser            docker
-        DB                /var/log/flb_kube.db
+        DB                /var/log/flb_jd_kube.db
         Mem_Buf_Limit     5MB
         Skip_Long_Lines   On
         Refresh_Interval  10
