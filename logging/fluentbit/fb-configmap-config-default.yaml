@@ -17,6 +17,12 @@ data:
         K8S-Logging.Parser  On
         K8S-Logging.exclude True
         Merge_Log           On
+  filter-docker.conf: |-
+    [FILTER]
+        Name                docker  
+        Match               docker-containers.*  
+        Key_Name            log  
+        Reserve_Data        On
   fluent-bit.conf: |-
     [SERVICE]
         Flush         1
@@ -29,6 +35,8 @@ data:
 
     @INCLUDE input-kubernetes.conf
     @INCLUDE filter-kubernetes.conf
+    @INCLUDE input-docker.conf
+    @INCLUDE filter-docker.conf
     @INCLUDE output-fluentd.conf
   input-kubernetes.conf: |-
     [INPUT]
@@ -40,6 +48,17 @@ data:
         Mem_Buf_Limit     5MB
         Skip_Long_Lines   On
         Refresh_Interval  10
+  input-docker.conf: |-
+    [INPUT]
+        Name              tail
+        Tag               docker-containers.*
+        Path              /var/lib/docker/containers/*/*.log
+        Parser            docker
+        DB                /var/log/flb_docker.db
+        Mem_Buf_Limit     5MB
+        Skip_Long_Lines   On
+        Refresh_Interval  10
+        Docker_Mode       True
   output-fluentd.conf: |-
     [OUTPUT]
         Name                forward

@@ -23,6 +23,8 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
+        - name: cluster.initial_master_nodes
+          value: "elasticsearch-0,elasticsearch-1,elasticsearch-2"
         - name: discovery.zen.ping.unicast.hosts
           value: elasticsearch
         - name: discovery.zen.minimum_master_nodes

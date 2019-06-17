@@ -19,6 +19,42 @@ data:
       @type null
     </match>
 
+    <match docker-containers.**>
+        @type elasticsearch
+        host "#{ENV['FLUENT_ELASTICSEARCH_HOST']}"
+        port "#{ENV['FLUENT_ELASTICSEARCH_PORT']}"
+        user "#{ENV['FLUENT_ELASTICSEARCH_USER']}" # remove these lines if not needed
+        password "#{ENV['FLUENT_ELASTICSEARCH_PASSWORD']}" # remove these lines if not needed
+        scheme http
+        logstash_prefix docker
+        logstash_format true
+        include_tag_key true
+    </match>
+
+    <match host.**>
+        @type elasticsearch
+        host "#{ENV['FLUENT_ELASTICSEARCH_HOST']}"
+        port "#{ENV['FLUENT_ELASTICSEARCH_PORT']}"
+        user "#{ENV['FLUENT_ELASTICSEARCH_USER']}" # remove these lines if not needed
+        password "#{ENV['FLUENT_ELASTICSEARCH_PASSWORD']}" # remove these lines if not needed
+        scheme http
+        logstash_prefix host
+        logstash_format true
+        include_tag_key true
+    </match>
+
+    <match kube.**>
+        @type elasticsearch
+        host "#{ENV['FLUENT_ELASTICSEARCH_HOST']}"
+        port "#{ENV['FLUENT_ELASTICSEARCH_PORT']}"
+        user "#{ENV['FLUENT_ELASTICSEARCH_USER']}" # remove these lines if not needed
+        password "#{ENV['FLUENT_ELASTICSEARCH_PASSWORD']}" # remove these lines if not needed
+        scheme http
+        logstash_prefix kube 
+        logstash_format true
+        include_tag_key true
+    </match>
+
     <match **.**>
         @type elasticsearch
         host "#{ENV['FLUENT_ELASTICSEARCH_HOST']}"
